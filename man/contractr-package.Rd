@@ -8,6 +8,14 @@
 \description{
 contractr is a grammar of financial contracts implemented in R. It can be used to compose financial contracts of different types.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/jameslairdsmith/contractr}
+  \item Report bugs at \url{https://github.com/jameslairdsmith/contractr/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: James Laird-Smith \email{jameslairdsmith@gmail.com}
 

@@ -7,7 +7,7 @@
 make_date_seq(...)
 }
 \arguments{
-\item{from}{A date to start from}
+\item{from}{A date to start from.}
 
 \item{to}{A date to go to.}
 
