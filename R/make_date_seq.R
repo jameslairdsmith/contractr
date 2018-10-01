@@ -1,7 +1,7 @@
 #' @title Create a series of dates
 #'
 #' @description This function creates a series of dates evenly spread apart. Currently a thin wrapper around `by()`
-#' @param from A date to start from
+#' @param from A date to start from.
 #' @param to A date to go to.
 #' @param by spacing between dates.
 #' @keywords date
