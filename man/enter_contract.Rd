@@ -4,10 +4,10 @@
 \alias{enter_contract}
 \title{Create a contract type}
 \usage{
-enter_contract(on)
+enter_contract(starting)
 }
 \arguments{
-\item{on}{The date on which the contract begins.}
+\item{starting}{The date on which the contract begins.}
 
 \item{exchanging}{Optional. The initial amount exchanged at the start of the contract. If omitted, defaults to 0.}
 }

@@ -1,7 +1,7 @@
 #' @title Create a contract type
 #'
 #' @description This function begins the process of creating a new contract type by adding an initial exchange date.
-#' @param on The date on which the contract begins.
+#' @param starting The date on which the contract begins.
 #' @param exchanging Optional. The initial amount exchanged at the start of the contract. If omitted, defaults to 0.
 #' @keywords contract, event
 #' @export true
