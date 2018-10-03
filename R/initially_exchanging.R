@@ -13,9 +13,8 @@
 
 initially_exchanging <- function(df, evt_value, evt_currency = "USD", on = "initial"){
   if(on == "initial"){
-    initial_date <- df %>% filter(evt_type == "Contract Deal Date") %>% select(evt_date) %>% pull()
     df %>% add_event(
-      evt_date = initial_date,
+      evt_date = get_start_date(df),
       evt_value = evt_value,
       evt_type = "Initial Exchange",
       evt_currency = evt_currency,
