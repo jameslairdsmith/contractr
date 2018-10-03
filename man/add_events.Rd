@@ -4,10 +4,12 @@
 \alias{add_events}
 \title{Add a generic financial event or set of events to a dataframe of financial events}
 \usage{
-add_events(df, evt_dates, evt_types, evt_values)
+add_events(df, evt_date, evt_type, evt_value, evt_currency)
 }
 \arguments{
 \item{df}{a dataframe to which the event is to be added.}
+
+\item{evt_currency}{The currency of the financial events.}
 
 \item{evt_dates}{A date or vector of dates corresponding to the days on which the financial event or events will take place.}
 
