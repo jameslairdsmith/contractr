@@ -4,8 +4,18 @@
 #' @keywords date
 #' @export
 
-contract <- function(x, ...)
+contract <- function(...)
   UseMethod("contract")
+
+
+contract.default <- function(...){
+  out <- list(
+    terms = NULL,
+    steps = NULL
+  )
+  class(out) <- "contract"
+  out
+}
 
 
 #' Print a Contract

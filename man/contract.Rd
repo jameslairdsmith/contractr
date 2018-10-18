@@ -4,7 +4,7 @@
 \alias{contract}
 \title{Create a financial contract object}
 \usage{
-contract(x, ...)
+contract(...)
 }
 \description{
 This function creates a financial contract object to which contractual terms can be added.

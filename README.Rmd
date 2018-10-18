@@ -16,3 +16,18 @@ knitr::opts_chunk$set(
 
 contractr is a grammar of financial contracts implemented in R. It is currently in the early stages of development.
 
+contractr provides a core set of functions which, when combined together, allow users to compose almost any type of financial contract. These contracts can then be be used to generate financial events, which are the the building blocks of all financial analysis.
+
+
+## Adding terms to a contract
+
+Financial contracts occur between different parties and obligate them to take certain actions. These are called terms. In contractr terms are added to a contract iteratively, building up until the contract is fully specified.
+
+While the terms to a contract can be of many types, they are almost always exchanges of money. If person A borrows $100 from person B and agrees to repay it in one year's time, that is a financial contract with two terms. When sheduled, that contract will have two events.
+
+
+## The `contract` object
+
+The contract object is an S3 object in R. Once all the terms have been added to it, it encodes the information necessary to produce financial events.
+
+The contract object doesn't schedule the events automatically, rather it delays this creation until it is fed into the `schedule()` function. In everyday language `schedule` is a verb which loosely means to "create events". When the `schedule()` function is applied to a `contract` object, it returns the events correspoding to the terms of the contract.
