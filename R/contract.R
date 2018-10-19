@@ -10,10 +10,11 @@ contract <- function(...)
 
 contract.default <- function(...){
   out <- list(
-    terms = NULL,
-    steps = NULL
+    terms = list(),
+    steps = list()
   )
   class(out) <- "contract"
+  class(out$terms) <- "term"
   out
 }
 
