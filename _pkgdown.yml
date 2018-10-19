@@ -1,3 +1,32 @@
 template:
   params:
     bootswatch: united
+navbar:
+  structure:
+    left:  [home, articles, other, reference]
+    right: [github]
+  components:
+    articles:
+      text: Articles
+      href: articles/index.html
+    reference:
+      text: Reference
+    other:
+      text: Other
+      menu:
+      - text: Category A
+      - text: A different title
+        href: articles/creating_custom_clauses.html
+      - text: A second different title
+        href: articles/creating_custom_clauses.html
+      - text: A third different title
+        href: articles/creating_custom_clauses.html
+      - text: -------
+      - text: Category B
+      - text: A forth different title
+        href: articles/creating_custom_clauses.html
+      - text: A fifth different title
+        href: articles/creating_custom_clauses.html
+      - text: A sixth different title
+        href: articles/creating_custom_clauses.html
+
