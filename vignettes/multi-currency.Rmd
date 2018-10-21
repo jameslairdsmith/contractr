@@ -1,0 +1,10 @@
+---
+title: "Multiple Currencies in Contractr"
+author: "James Laird-Smith"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Multiple Currencies in Contractr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---

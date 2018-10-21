@@ -1,0 +1,22 @@
+---
+title: "FAQ"
+author: "James Laird-Smith"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{FAQ}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Multi-party contracts
+Q: Why is there no support for contracts between more than two parties?
+
+A: The vast majority of contracts in finance are made between only two parties and so the grammar is still highly useable even if limited to two party contract. The implentation of an n-party grammar would significantly increase the complexity of the grammar and thus also increase the maintenance workload and restrict usability. The trade-off is certainly not worth it. Furthermore, contract between more than two parties can be encoded by simply specifying more than one contract. Experience shows that, if anything, this actually improves the clarity of the contract because the terms between the parties are specified more precisely.

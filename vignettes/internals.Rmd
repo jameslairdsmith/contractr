@@ -1,0 +1,34 @@
+---
+title: "Internals of contracr"
+author: "James Laird-Smith"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Internals of contractr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+For those looking to contribute to contractr, it will be helpful to understand the internals that underpin the package.
+
+# Delayed evaluation
+
+When the ideas behind contractr were first in development, the idea was to perform analysis on a dataframe of financial events. The thinking was that financial events are the centrepiece of financial analysis and thus all functions should be directed towards a  dataframe of those events with the aim of building up the terms of any particular contract.
+
+That idea was quickly abandoned in favour of a system that used delayed evaluation. Instead of working on a dataframe exclusively, it was vastly better to have the financial contract be an object (a list) which could be used to collate the components of a particualr kind of contract together. Only once that object was fully specified would it be best to transform it into the dataframe of financial events.
+
+There were two very good reasons for this:
+1. It makes the composing of contracts easier. The prime example of this is the default terms of many contracts will use the maturity value of the contract as the end date. But in everyday speech you would probably specify the maturity date of the contract last.
+2. Oftentimes in finance contracts have unknown terms, such as the future value of a particular market tracker.
+
+
+This has a helpful parallel to actual financial contracts in the real world.
+
+Importantly, this is not the same as non-standard evaluation, althought the two are often used interchangably.

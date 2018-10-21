@@ -1,0 +1,36 @@
+---
+title: "Nomenclature in contractr"
+author: "James Laird-Smith"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Nomenclature}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Code ought be written such that it is readable by humans as well as machines. 
+
+Contractr is no different in this respect.
+
+One should be able to assemble code in the same way one draws up a contract: that is, by adding clauses until the contract is fully specified.
+
+# Contracts
+
+The taxonomy of finance is replete with different names for different things:
+
+provision, term, clause, requirement, specification, stipulation; proviso, condition, rider, qualification, restriction, reservation, caveat, limitation.
+
+
+# Clauses
+
+Contracts have a structure where different parts specify the actions of the parties involved. These parts have differing names both in law and everyday language. The most common name for these are the `terms` of a contract. But the word `term` is too general for our purpose and thus liable to cause confusion. For example, is is common to speak about the `terms` of other things, such as formulas. Techically speaking, a terms could refer to anything.
+
+A better word for this is `clause`.
