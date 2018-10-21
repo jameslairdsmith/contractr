@@ -5,11 +5,11 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Creating Custom Clauses • contractr</title>
+<title>Internals of contracr • contractr</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Creating Custom Clauses">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Internals of contracr">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
@@ -118,22 +118,38 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Creating Custom Clauses</h1>
+      <h1>Internals of contracr</h1>
                         <h4 class="author">James Laird-Smith</h4>
             
             <h4 class="date">2018-10-21</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/jameslairdsmith/contractr/blob/master/vignettes/creating_custom_clauses.Rmd"><code>vignettes/creating_custom_clauses.Rmd</code></a></small>
-      <div class="hidden name"><code>creating_custom_clauses.Rmd</code></div>
+      <small class="dont-index">Source: <a href="https://github.com/jameslairdsmith/contractr/blob/master/vignettes/internals.Rmd"><code>vignettes/internals.Rmd</code></a></small>
+      <div class="hidden name"><code>internals.Rmd</code></div>
 
     </div>
 
     
     
-
+<p>For those looking to contribute to contractr, it will be helpful to understand the internals that underpin the package.</p>
+<div id="delayed-evaluation" class="section level1">
+<h1 class="hasAnchor">
+<a href="#delayed-evaluation" class="anchor"></a>Delayed evaluation</h1>
+<p>When the ideas behind contractr were first in development, the idea was to perform analysis on a dataframe of financial events. The thinking was that financial events are the centrepiece of financial analysis and thus all functions should be directed towards a dataframe of those events with the aim of building up the terms of any particular contract.</p>
+<p>That idea was quickly abandoned in favour of a system that used delayed evaluation. Instead of working on a dataframe exclusively, it was vastly better to have the financial contract be an object (a list) which could be used to collate the components of a particualr kind of contract together. Only once that object was fully specified would it be best to transform it into the dataframe of financial events.</p>
+<p>There were two very good reasons for this: 1. It makes the composing of contracts easier. The prime example of this is the default terms of many contracts will use the maturity value of the contract as the end date. But in everyday speech you would probably specify the maturity date of the contract last. 2. Oftentimes in finance contracts have unknown terms, such as the future value of a particular market tracker.</p>
+<p>This has a helpful parallel to actual financial contracts in the real world.</p>
+<p>Importantly, this is not the same as non-standard evaluation, althought the two are often used interchangably.</p>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+        <div id="tocnav">
+      <h2 class="hasAnchor">
+<a href="#tocnav" class="anchor"></a>Contents</h2>
+      <ul class="nav nav-pills nav-stacked">
+<li><a href="#delayed-evaluation">Delayed evaluation</a></li>
+      </ul>
+</div>
       </div>
 
 </div>

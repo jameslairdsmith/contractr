@@ -2,8 +2,12 @@
 
 S3method(print,contract)
 export(add_events)
+export(add_term)
 export(contract)
+export(draw_up)
 export(get_start_date)
 export(make_date_seq)
 export(maturity)
+export(sometime_between)
+export(term)
 export(true)

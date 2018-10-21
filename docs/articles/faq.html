@@ -5,11 +5,11 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Creating Custom Clauses • contractr</title>
+<title>FAQ • contractr</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Creating Custom Clauses">
+<script src="../pkgdown.js"></script><meta property="og:title" content="FAQ">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
@@ -118,22 +118,34 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Creating Custom Clauses</h1>
+      <h1>FAQ</h1>
                         <h4 class="author">James Laird-Smith</h4>
             
             <h4 class="date">2018-10-21</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/jameslairdsmith/contractr/blob/master/vignettes/creating_custom_clauses.Rmd"><code>vignettes/creating_custom_clauses.Rmd</code></a></small>
-      <div class="hidden name"><code>creating_custom_clauses.Rmd</code></div>
+      <small class="dont-index">Source: <a href="https://github.com/jameslairdsmith/contractr/blob/master/vignettes/faq.Rmd"><code>vignettes/faq.Rmd</code></a></small>
+      <div class="hidden name"><code>faq.Rmd</code></div>
 
     </div>
 
     
     
-
+<div id="multi-party-contracts" class="section level2">
+<h2 class="hasAnchor">
+<a href="#multi-party-contracts" class="anchor"></a>Multi-party contracts</h2>
+<p>Q: Why is there no support for contracts between more than two parties?</p>
+<p>A: The vast majority of contracts in finance are made between only two parties and so the grammar is still highly useable even if limited to two party contract. The implentation of an n-party grammar would significantly increase the complexity of the grammar and thus also increase the maintenance workload and restrict usability. The trade-off is certainly not worth it. Furthermore, contract between more than two parties can be encoded by simply specifying more than one contract. Experience shows that, if anything, this actually improves the clarity of the contract because the terms between the parties are specified more precisely.</p>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+        <div id="tocnav">
+      <h2 class="hasAnchor">
+<a href="#tocnav" class="anchor"></a>Contents</h2>
+      <ul class="nav nav-pills nav-stacked">
+<li><a href="#multi-party-contracts">Multi-party contracts</a></li>
+      </ul>
+</div>
       </div>
 
 </div>

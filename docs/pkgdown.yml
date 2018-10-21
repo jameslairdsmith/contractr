@@ -3,4 +3,8 @@ pkgdown: 1.1.0
 pkgdown_sha: ~
 articles:
   creating_custom_clauses: creating_custom_clauses.html
+  faq: faq.html
+  internals: internals.html
+  multi-currency: multi-currency.html
+  nomenclature: nomenclature.html
 
