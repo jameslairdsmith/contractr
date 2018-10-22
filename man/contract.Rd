@@ -2,11 +2,14 @@
 % Please edit documentation in R/contract.R
 \name{contract}
 \alias{contract}
-\title{Create a financial contract object}
+\title{Create a tidy financial contract object}
 \usage{
-contract(...)
+contract(counterparty = NULL)
+}
+\arguments{
+\item{counterparty}{the party with whome the contract is made. Defaults to NULL.}
 }
 \description{
 This function creates a financial contract object to which contractual terms can be added.
 }
-\keyword{date}
+\keyword{contract}

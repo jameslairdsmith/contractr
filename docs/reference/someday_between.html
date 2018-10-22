@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create a tidy financial contract object — contract • contractr</title>
+<title>Specify unknown date values in a contract — someday_between • contractr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Create a tidy financial contract object — contract" />
+<meta property="og:title" content="Specify unknown date values in a contract — someday_between" />
 
-<meta property="og:description" content="This function creates a financial contract object to which contractual terms can be added." />
+<meta property="og:description" content="This function acts as a stand-in for unknown date values in a contract." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -154,25 +154,31 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create a tidy financial contract object</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/contract.R'><code>R/contract.R</code></a></small>
-    <div class="hidden name"><code>contract.Rd</code></div>
+    <h1>Specify unknown date values in a contract</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/someday.R'><code>R/someday.R</code></a></small>
+    <div class="hidden name"><code>someday_between.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>This function creates a financial contract object to which contractual terms can be added.</p>
+    <p>This function acts as a stand-in for unknown date values in a contract.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>contract</span>(<span class='kw'>counterparty</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>someday_between</span>(<span class='no'>start_date</span>, <span class='no'>end_date</span>)
+
+<span class='fu'>someday</span>()</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>counterparty</th>
-      <td><p>the party with whome the contract is made. Defaults to NULL.</p></td>
+      <th>start_date</th>
+      <td><p>the earliest possible date of the event.</p></td>
+    </tr>
+    <tr>
+      <th>end_date</th>
+      <td><p>the latest possible date of the event.</p></td>
     </tr>
     </table>
     

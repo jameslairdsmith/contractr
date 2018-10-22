@@ -6,7 +6,7 @@
 #' @param evt_currency The currency of the exchange amount. Defaults to "USD".
 #' @param on The date on which this payment is made. Defaults to "initial", which gets the start of the contract already specified.
 #' @keywords contract, event
-#' @export true
+#' @export
 #' @examples
 #' library(lubridate)
 #' enter_contract(on = dmy(01/01/2018))

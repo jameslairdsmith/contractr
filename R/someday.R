@@ -5,10 +5,13 @@
 #' @param end_date the latest possible date of the event.
 #' @export
 
-sometime_between <- function(start_date, end_date){
+someday_between <- function(start_date, end_date){
   NULL
 }
 
-sometime <- function(){
+#' @rdname someday_between
+#' @export
+
+someday <- function(){
   NULL
 }

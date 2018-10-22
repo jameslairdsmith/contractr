@@ -1,20 +1,20 @@
-#' @title Create a financial contract object
+#' @title Create a tidy financial contract object
 #'
 #' @description This function creates a financial contract object to which contractual terms can be added.
-#' @keywords date
+#' @param counterparty the party with whome the contract is made. Defaults to NULL.
+#' @keywords contract
 #' @export
 
-contract <- function(...)
-  UseMethod("contract")
+contract <- function(counterparty = NULL){
 
+  check_counterparty(counterparty)
 
-contract.default <- function(...){
   out <- list(
+    counterparty = counterparty,
     terms = list(),
     steps = list()
   )
   class(out) <- "contract"
-  class(out$terms) <- "term"
   out
 }
 

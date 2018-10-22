@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create a tidy financial contract object — contract • contractr</title>
+<title>Add a new clause to the current contract — add_clause • contractr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Create a tidy financial contract object — contract" />
+<meta property="og:title" content="Add a new clause to the current contract — add_clause" />
 
-<meta property="og:description" content="This function creates a financial contract object to which contractual terms can be added." />
+<meta property="og:description" content="`add_clause` adds a step to the last location in the recipe." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -154,27 +154,35 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create a tidy financial contract object</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/contract.R'><code>R/contract.R</code></a></small>
-    <div class="hidden name"><code>contract.Rd</code></div>
+    <h1>Add a new clause to the current contract</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/clause.R'><code>R/clause.R</code></a></small>
+    <div class="hidden name"><code>add_clause.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>This function creates a financial contract object to which contractual terms can be added.</p>
+    <p>`add_clause` adds a step to the last location in the recipe.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>contract</span>(<span class='kw'>counterparty</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>add_clause</span>(<span class='no'>contract</span>, <span class='no'>object</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>counterparty</th>
-      <td><p>the party with whome the contract is made. Defaults to NULL.</p></td>
+      <th>contract</th>
+      <td><p>A [contract()].</p></td>
+    </tr>
+    <tr>
+      <th>object</th>
+      <td><p>A clause object.</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A updated [contract()] with the new term in the last slot.</p>
     
 
   </div>
@@ -182,7 +190,9 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
 
   </div>
 </div>

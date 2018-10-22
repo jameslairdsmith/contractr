@@ -11,5 +11,6 @@ maturity <- function(x){x}
 
 
 #' @rdname maturity
+#' @export
 
 inception <- function(x){x}

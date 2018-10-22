@@ -39,12 +39,16 @@ reference:
       Functions that are basic.
     contents:
       - contract
-      - enter_contract
       - draw_up
   - title: "Adding events"
     desc: "Functions for adding events"
     contents:
       - starts_with("add_")
+  - title: "Placeholders"
+    desc: "contractr allows you to input placeholders for terms in a contract that are not yet known."
+    contents:
+      - someday_between
+      - maturity
   - title: "Helper Functions"
     contents:
       - make_date_seq
