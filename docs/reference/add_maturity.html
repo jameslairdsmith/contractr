@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Overall wrapper to make new term objects — term • contractr</title>
+<title>Add maturity date to a contract — add_maturity • contractr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Overall wrapper to make new term objects — term" />
+<meta property="og:title" content="Add maturity date to a contract — add_maturity" />
 
-<meta property="og:description" content="The function creates objects with class of `term`" />
+<meta property="og:description" content="Add maturity date to a contract" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -154,41 +154,31 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Overall wrapper to make new term objects</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/term.R'><code>R/term.R</code></a></small>
-    <div class="hidden name"><code>term.Rd</code></div>
+    <h1>Add maturity date to a contract</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/add_maturity.R'><code>R/add_maturity.R</code></a></small>
+    <div class="hidden name"><code>add_maturity.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>The function creates objects with class of `term`</p>
+    <p>Add maturity date to a contract</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>term</span>(<span class='no'>subclass</span>, <span class='no'>...</span>, <span class='kw'>.prefix</span> <span class='kw'>=</span> <span class='st'>"term_"</span>)</pre>
+    <pre class="usage"><span class='fu'>add_maturity</span>(<span class='no'>contract</span>, <span class='no'>date</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>subclass</th>
-      <td><p>A character string for the resulting class. For example,
-if `subclass = "blah"` the term object that is returned has class
-`term_blah`.</p></td>
+      <th>contract</th>
+      <td><p>A contract object</p></td>
     </tr>
     <tr>
-      <th>...</th>
-      <td><p>All arguments to the operator that should be returned.</p></td>
-    </tr>
-    <tr>
-      <th>.prefix</th>
-      <td><p>Prefix to the subclass created.</p></td>
+      <th>date</th>
+      <td><p>The maturity date of the contract.</p></td>
     </tr>
     </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>An updated term with the new class.</p>
     
 
   </div>
@@ -196,9 +186,7 @@ if `subclass = "blah"` the term object that is returned has class
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-          </ul>
+                </ul>
 
   </div>
 </div>

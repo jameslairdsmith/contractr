@@ -3,9 +3,12 @@ template:
     bootswatch: united
 navbar:
   structure:
-    left:  [home, articles, other, reference]
+    left:  [home, start, articles, other, reference]
     right: [github]
   components:
+    start:
+      text: Getting Started
+      href: articles/index.html
     articles:
       text: Articles
       href: articles/index.html
@@ -29,4 +32,20 @@ navbar:
         href: articles/creating_custom_clauses.html
       - text: A sixth different title
         href: articles/creating_custom_clauses.html
+
+reference:
+  - title: "Basic Functions"
+    desc: >
+      Functions that are basic.
+    contents:
+      - contract
+      - enter_contract
+      - draw_up
+  - title: "Adding events"
+    desc: "Functions for adding events"
+    contents:
+      - starts_with("add_")
+  - title: "Helper Functions"
+    contents:
+      - make_date_seq
 
