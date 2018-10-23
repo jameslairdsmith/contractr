@@ -1,7 +1,7 @@
 #' @title Add a start date to a contract
 #'
 #' @description This function specifies the start date to a tidy contract.
-#' @param contract A contract to which the start date needs to be specified.
+#' @param contract A contract for which the start date is to be specified.
 #' @param date The start date
 #' @keywords contract, inception
 #' @export
@@ -10,7 +10,7 @@
 #' library(lubridate)
 #'
 #' make_contract() %>%
-#'   starting_from(dmy("01/01/2000")
+#'   starting_from(dmy("01/01/2000"))
 #'
 
 
@@ -26,7 +26,7 @@ starting_from <- function(contract, start_date, id = "inception"){
 
   add_clause(
     contract,
-    starting_from_new(
+    starting_from_clause(
       start_date = start_date,
       id = id
     )
@@ -34,7 +34,7 @@ starting_from <- function(contract, start_date, id = "inception"){
 }
 
 
-starting_from_new <- function(start_date, id) {
+starting_from_clause <- function(start_date, id) {
     clause(
       subclass = "starting",
       start_date = start_date,
