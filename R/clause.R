@@ -26,6 +26,6 @@ clause <- function(subclass, ..., .prefix = "clause_") {
 #' @export
 
 add_clause <- function(contract, object) {
-  contract$clause[[length(contract$clause) + 1]] <- object
+  contract$clauses[[length(contract$clauses) + 1]] <- object
   contract
 }
