@@ -69,3 +69,13 @@ get_counterparty(con)
 ```
 
 
+```{r}
+con <- 
+  make_contract() %>% 
+  add_counterparty("JP Morgan") %>% 
+  add_maturity(dmy("01/01/2018")) %>% 
+  starting_from(dmy("01/01/2018")) 
+
+View(con)
+```
+
