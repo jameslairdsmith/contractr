@@ -52,4 +52,20 @@ con
 translate_period_freq("-monthly")
 ```
 
+```{r}
+con <- 
+  make_contract() %>% 
+  add_counterparty("JP Morgan")
+
+!is.null(con$counterparty)
+```
+
+```{r}
+con <- 
+  make_contract() %>% 
+  add_counterparty("JP Morgan")
+
+get_counterparty(con)
+```
+
 

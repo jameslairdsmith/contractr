@@ -15,7 +15,7 @@
 
 add_counterparty <- function(contract, id){
 
-  check_counterparty(id)
+  check_counterparty_id(id)
 
   contract$counterparty <- id
   contract
@@ -23,7 +23,21 @@ add_counterparty <- function(contract, id){
 
 
 
-check_counterparty <- function(counterparty = NULL){
+has_counterparty <- function(contract){
+  !is.null(contract$counterparty)
+}
+
+
+get_counterparty <- function(contract){
+  if(!has_counterparty(contract)){
+    stop("Contract has no counterparty specified", call. = FALSE)
+  } else {
+    contract$counterparty
+  }
+}
+
+
+check_counterparty_id <- function(counterparty){
 
   if(!is.null(counterparty)){
 
