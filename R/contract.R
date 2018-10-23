@@ -1,18 +1,16 @@
 #' @title Create a tidy financial contract object
 #'
 #' @description This function creates a financial contract object to which contractual terms can be added.
-#' @param counterparty the party with whome the contract is made. Defaults to NULL.
 #' @keywords contract
+#' @importFrom tibble tibble
 #' @export
 
-contract <- function(counterparty = NULL){
-
-  check_counterparty(counterparty)
+make_contract <- function(){
 
   out <- list(
-    counterparty = counterparty,
-    terms = list(),
-    steps = list()
+    counterparty = NULL,
+    clauses = list(),
+    terms = tibble::tibble(term_name = character(), term_value = as.Date(character()))
   )
   class(out) <- "contract"
   out
@@ -31,6 +29,7 @@ contract <- function(counterparty = NULL){
 #' @export
 
 print.contract <- function(x, form_width = 30, ...) {
-  cat("Financial contract\n\n")
+  cat("\nA Financial (Tidy) Contract\n\n")
+  cat("Counterparty: ", x$counterparty, "\n\n")
   cat("Inputs:\n\n")
   }

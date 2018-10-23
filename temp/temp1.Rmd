@@ -1,0 +1,55 @@
+---
+title: "Temp1"
+output: NA
+---
+
+```{r}
+library(contractr)
+library(magrittr)
+library(lubridate)
+```
+
+
+```{r}
+con <- 
+  make_contract() %>% 
+  add_counterparty("JP Morgan")
+
+con
+View(con)
+```
+
+
+```{r}
+con <- 
+  make_contract() %>% 
+  add_counterparty(c("JP Morgan", "Goldman Sacs"))
+
+con
+View(con)
+```
+
+
+```{r}
+con <- 
+  make_contract() %>% 
+  add_counterparty(mtcars)
+
+con
+View(con)
+```
+
+```{r}
+con <- make_contract() %>% 
+  add_maturity(dmy("01/01/2000")) %>% 
+  add_counterparty("JP Morgan")
+
+View(con)
+con
+```
+
+```{r}
+translate_period_freq("-monthly")
+```
+
+

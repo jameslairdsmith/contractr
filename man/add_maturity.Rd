@@ -2,15 +2,24 @@
 % Please edit documentation in R/add_maturity.R
 \name{add_maturity}
 \alias{add_maturity}
-\title{Add maturity date to a contract}
+\title{Add a maturity date to a contract}
 \usage{
 add_maturity(contract, date)
 }
 \arguments{
-\item{contract}{A contract object}
+\item{contract}{A contract to which the maturity date needs to be specified.}
 
-\item{date}{The maturity date of the contract.}
+\item{id}{The maturity date}
 }
 \description{
-Add maturity date to a contract
+This function specifies the maturity date to a tidy contract.
 }
+\examples{
+library(magrittr)
+
+make_contract() \%>\%
+  add_counterparty("JP Morgan")
+
+}
+\keyword{contract,}
+\keyword{maturity}

@@ -4,7 +4,7 @@
 #' @param contract A contract object
 #' @export
 
-draw_up <- function(contract){
+draft <- function(contract){
   contract
 }
 
