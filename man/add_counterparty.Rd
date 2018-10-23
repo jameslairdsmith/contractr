@@ -2,9 +2,15 @@
 % Please edit documentation in R/counterparty.R
 \name{add_counterparty}
 \alias{add_counterparty}
+\alias{has_counterparty}
+\alias{get_counterparty}
 \title{Add a counterparty to a contract}
 \usage{
 add_counterparty(contract, id)
+
+has_counterparty(contract)
+
+get_counterparty(contract)
 }
 \arguments{
 \item{contract}{A contract to which the counterparty needs to be specified.}
@@ -17,9 +23,15 @@ This function adds a counterparty to a tidy contract.
 \examples{
 library(magrittr)
 
-make_contract() \%>\%
+con <-
+  make_contract() \%>\%
   add_counterparty("JP Morgan")
 
+con
+
+has_counterparty(con)
+
+get_counterparty(con)
 }
 \keyword{contract,}
 \keyword{counterparty}

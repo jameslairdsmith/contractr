@@ -8,9 +8,15 @@
 #' @examples
 #' library(magrittr)
 #'
-#' make_contract() %>%
+#' con <-
+#'   make_contract() %>%
 #'   add_counterparty("JP Morgan")
 #'
+#' con
+#'
+#' has_counterparty(con)
+#'
+#' get_counterparty(con)
 
 
 add_counterparty <- function(contract, id){
@@ -21,12 +27,13 @@ add_counterparty <- function(contract, id){
   contract
 }
 
-
+#' @rdname add_counterparty
 
 has_counterparty <- function(contract){
   !is.null(contract$counterparty)
 }
 
+#' @rdname add_counterparty
 
 get_counterparty <- function(contract){
   if(!has_counterparty(contract)){
