@@ -10,7 +10,7 @@ make_contract <- function(){
   out <- list(
     counterparty = NULL,
     clauses = list(),
-    terms = tibble::tibble(term_name = character(), term_value = as.Date(character())),
+    terms = list(),
     date_terms = tibble::tibble(date_type = character(), date_value = as.Date(character()))
   )
   class(out) <- "contract"

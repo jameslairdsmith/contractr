@@ -21,7 +21,8 @@ starting_from <-
       add_clause(
         starting_from_clause(start_date = start_date, id = id)
         ) %>%
-      add_date_term(date_type = id, date_value = start_date)
+      add_date_term(date_type = id, date_value = start_date) %>%
+      add_term(start_date, "start date")
 }
 
 starting_from_clause <- function(start_date, id){

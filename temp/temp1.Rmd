@@ -4,7 +4,6 @@ output: NA
 ---
 
 ```{r}
-library(contractr)
 library(magrittr)
 library(lubridate)
 ```
@@ -171,11 +170,13 @@ cont <-
   add_counterparty("JP") %>% 
   starting_from(dmy("01/01/2000"))
 
-#View(cont)
+View(cont)
 cont
 ```
 
 ```{r}
 cont[["clauses"]][[1]][["start_date"]]
 ```
+
+
 
