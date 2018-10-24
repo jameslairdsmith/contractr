@@ -6,13 +6,15 @@
 #'   `clause_blah`.
 #' @param ... All arguments to the operator that should be returned.
 #' @param .prefix Prefix to the subclass created.
+#' @importFrom magrittr %>%
+#' @importFrom purrr some keep
 #' @keywords contract term
 #' @return An updated term with the new class.
 #' @export
 
-clause <- function(subclass, ..., .prefix = "clause_") {
+make_clause <- function(subclass, ..., .suffix = "_clause") {
   structure(list(...),
-            class = c(paste0(.prefix, subclass), "clause"))
+            class = c(paste0(subclass, .suffix), "clause"))
 }
 
 
@@ -25,7 +27,26 @@ clause <- function(subclass, ..., .prefix = "clause_") {
 #' @return A updated [contract()] with the new term in the last slot.
 #' @export
 
-add_clause <- function(contract, object) {
-  contract$clauses[[length(contract$clauses) + 1]] <- object
+add_clause <- function(contract, clause) {
+
+  if(clause$unique == T){
+  if(has_clause(contract, get_clause_type(clause))){
+    stop("Contract can only hold 1 clause of type ",get_clause_type(clause), call. = F)
+  }}
+
+  contract$clauses[[length(contract$clauses) + 1]] <- clause
   contract
+}
+
+
+has_clause <- function(contract, clause_type){
+
+  contract[["clauses"]] %>%
+    purrr::some(inherits, clause_type)
+}
+
+get_clause_type <- function(clause){
+  clause %>%
+    class() %>%
+    purrr::keep(. != "clause")
 }

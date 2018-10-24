@@ -4,6 +4,7 @@
 #' @param contract A contract for which the start date is to be specified.
 #' @param date The start date
 #' @keywords contract, inception
+#' @importFrom magrittr %>%
 #' @export
 #' @examples
 #' library(magrittr)
@@ -13,32 +14,26 @@
 #'   starting_from(dmy("01/01/2000"))
 #'
 
+starting_from <-
 
-#starting <- function(contract, date){
-
- # data <- as.Date(date)
-
-#  contract$terms <- contract$terms %>%  tibble::add_row(term_name = "maturity date", term_value = date)
-#  contract
-#}
-
-starting_from <- function(contract, start_date, id = "inception"){
-
-  add_clause(
-    contract,
-    starting_from_clause(
-      start_date = start_date,
-      id = id
-    )
-  )
+  function(contract, start_date, id = "start date"){
+    contract %>%
+      add_clause(
+        starting_from_clause(start_date = start_date, id = id)
+        ) %>%
+      add_date_term(date_type = id, date_value = start_date)
 }
 
-
-starting_from_clause <- function(start_date, id) {
-    clause(
-      subclass = "starting",
+starting_from_clause <- function(start_date, id){
+    make_clause(
+      subclass = "starting_from",
       start_date = start_date,
-      id = id
+      id = id,
+      unique = T
     )
   }
 
+print.starting_from_clause <- function(x, width = max(20, options()$width - 29), ...) {
+  cat("Start date of ", sep = "")
+  invisible(x)
+}

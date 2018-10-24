@@ -10,7 +10,8 @@ make_contract <- function(){
   out <- list(
     counterparty = NULL,
     clauses = list(),
-    terms = tibble::tibble(term_name = character(), term_value = as.Date(character()))
+    terms = tibble::tibble(term_name = character(), term_value = as.Date(character())),
+    date_terms = tibble::tibble(date_type = character(), date_value = as.Date(character()))
   )
   class(out) <- "contract"
   out
@@ -31,5 +32,11 @@ make_contract <- function(){
 print.contract <- function(x, form_width = 30, ...) {
   cat("\nA Financial (Tidy) Contract\n\n")
   cat("Counterparty: ", x$counterparty, "\n\n")
-  cat("Inputs:\n\n")
+
+  if (length(x$clauses) > 0) {
+    cat("Clauses:\n")
+    for (i in seq_along(x$clauses))
+      print(x$clauses[[i]], form_width = form_width)
+  }
+  invisible(x)
   }

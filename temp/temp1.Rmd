@@ -74,8 +74,108 @@ con <-
   make_contract() %>% 
   add_counterparty("JP Morgan") %>% 
   add_maturity(dmy("01/01/2018")) %>% 
+  starting_from(dmy("01/01/2018")) %>% 
   starting_from(dmy("01/01/2018")) 
 
 View(con)
+```
+
+```{r}
+con$date_terms %>% 
+  tibble::add_row(date_type = "mat", date_value = dmy("01/01/2000"))
+```
+
+
+```{r}
+x <- con[["clauses"]] %>% purrr::map(class) 
+
+#x <- con[["clauses"]] %>% purrr::keep(class(.) == "clause") 
+
+#%>% 
+#purrr::keep(x, x != "clause")
+
+x
+```
+
+```{r}
+con %>% 
+  purrr::pluck("clauses") %>% 
+  purrr::map(class) %>%
+  unlist() %>%
+  unique() %>% 
+  purrr::has_element("clause")
+```
+
+
+```{r}
+cl <- make_clause(
+      subclass = "start_date",
+      start_date = dmy("01/01/2000"),
+      id = "id",
+      unique = "unique"
+    )
+
+cl <- class(cl)
+
+purrr::keep(cl, cl!="clause")
+```
+
+```{r}
+cont <- 
+  make_contract() %>% 
+  starting_from(dmy("01/01/2018")) 
+
+cl <- make_clause(
+      subclass = "start_date",
+      start_date = dmy("01/01/2000"),
+      id = "id",
+      unique = "unique")
+      
+a_clause_type <- get_clause_type(cl)
+
+has_clause(cont, a_clause_type)
+```
+
+```{r}
+cont <- make_contract() %>% 
+  starting_from(dmy("01/01/2018")) %>% 
+  starting_from(dmy("01/01/2018"))
+
+View(cont)
+```
+
+
+```{r}
+has_clause <- function(contract){
+  x <- purrr::map(contract[["clauses"]], inherits, "clause_start_date")
+  x <- x
+  x
+}
+
+has_clause(con)
+```
+
+```{r}
+has_clause <- function(contract, clause_type){
+  
+  contract[["clauses"]] %>% 
+    purrr::some(inherits, clause_type)
+}
+
+has_clause(con, "clause_start_date_")
+```
+
+```{r}
+cont <-
+  make_contract() %>% 
+  add_counterparty("JP") %>% 
+  starting_from(dmy("01/01/2000"))
+
+#View(cont)
+cont
+```
+
+```{r}
+cont[["clauses"]][[1]][["start_date"]]
 ```
 

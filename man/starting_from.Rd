@@ -4,7 +4,7 @@
 \alias{starting_from}
 \title{Add a start date to a contract}
 \usage{
-starting_from(contract, start_date, id = "inception")
+starting_from(contract, start_date, id = "start date")
 }
 \arguments{
 \item{contract}{A contract for which the start date is to be specified.}

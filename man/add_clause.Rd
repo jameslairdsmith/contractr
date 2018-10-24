@@ -4,7 +4,7 @@
 \alias{add_clause}
 \title{Add a new clause to the current contract}
 \usage{
-add_clause(contract, object)
+add_clause(contract, clause)
 }
 \arguments{
 \item{contract}{A [contract()].}

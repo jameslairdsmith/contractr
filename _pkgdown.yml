@@ -52,4 +52,10 @@ reference:
   - title: "Helper Functions"
     contents:
       - make_date_seq
+  - title: "Creating custom clauses"
+    desc: "These fuctions can be used if you want to add new types of clauses or terms."
+    contents:
+      - add_date_term
+      - make_clause
+      - add_clause
 
