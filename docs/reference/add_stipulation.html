@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add a new term to the current contract — add_term • contractr</title>
+<title>Overall wrapper for adding a new term to the current contract — add_stipulation • contractr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Add a new term to the current contract — add_term" />
+<meta property="og:title" content="Overall wrapper for adding a new term to the current contract — add_stipulation" />
 
-<meta property="og:description" content="`add_term` adds a step to the last location in the recipe." />
+<meta property="og:description" content="`add_stipulation` adds a term to the last location in the contract." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -154,18 +154,18 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add a new term to the current contract</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/term.R'><code>R/term.R</code></a></small>
-    <div class="hidden name"><code>add_term.Rd</code></div>
+    <h1>Overall wrapper for adding a new term to the current contract</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/stipulation.R'><code>R/stipulation.R</code></a></small>
+    <div class="hidden name"><code>add_stipulation.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>`add_term` adds a step to the last location in the recipe.</p>
+    <p>`add_stipulation` adds a term to the last location in the contract.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>add_term</span>(<span class='no'>contract</span>, <span class='no'>term</span>)</pre>
+    <pre class="usage"><span class='fu'>add_stipulation</span>(<span class='no'>contract</span>, <span class='no'>stipulation</span>, <span class='no'>stipulation_name</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -176,7 +176,7 @@
     </tr>
     <tr>
       <th>object</th>
-      <td><p>A term object.</p></td>
+      <td><p>A stipulation to add to the contract.</p></td>
     </tr>
     </table>
     

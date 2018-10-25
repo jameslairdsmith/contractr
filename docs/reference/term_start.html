@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add a new term to the current contract — add_term • contractr</title>
+<title>Add a start date to a contract — term_start • contractr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Add a new term to the current contract — add_term" />
+<meta property="og:title" content="Add a start date to a contract — term_start" />
 
-<meta property="og:description" content="`add_term` adds a step to the last location in the recipe." />
+<meta property="og:description" content="This function specifies the start date to a tidy contract." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -154,45 +154,54 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add a new term to the current contract</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/term.R'><code>R/term.R</code></a></small>
-    <div class="hidden name"><code>add_term.Rd</code></div>
+    <h1>Add a start date to a contract</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/start.R'><code>R/start.R</code></a></small>
+    <div class="hidden name"><code>term_start.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>`add_term` adds a step to the last location in the recipe.</p>
+    <p>This function specifies the start date to a tidy contract.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>add_term</span>(<span class='no'>contract</span>, <span class='no'>term</span>)</pre>
+    <pre class="usage"><span class='fu'>term_start</span>(<span class='no'>contract</span>, <span class='no'>start_date</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"start_date"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>contract</th>
-      <td><p>A [contract()].</p></td>
+      <td><p>A contract for which the start date is to be specified.</p></td>
     </tr>
     <tr>
-      <th>object</th>
-      <td><p>A term object.</p></td>
+      <th>date</th>
+      <td><p>The start date</p></td>
     </tr>
     </table>
     
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A updated [contract()] with the new term in the last slot.</p>
-    
-
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>magrittr</span>)
+<span class='fu'>library</span>(<span class='no'>lubridate</span>)</div><div class='output co'>#&gt; <span class='message'></span>
+#&gt; <span class='message'>Attaching package: ‘lubridate’</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from ‘package:base’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    date</span></div><div class='input'>
+<span class='fu'><a href='make_contract.html'>make_contract</a></span>() <span class='kw'>%&gt;%</span>
+  <span class='fu'>term_start</span>(<span class='fu'><a href='http://lubridate.tidyverse.org/reference/ymd.html'>dmy</a></span>(<span class='st'>"01/01/2000"</span>))</div><div class='output co'>#&gt; 
+#&gt; A Financial (Tidy) Contract
+#&gt; 
+#&gt; Clauses:
+#&gt; Start date of 1 Jan 2000</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-          </ul>
+            
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

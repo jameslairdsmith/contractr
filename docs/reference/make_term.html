@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add a new term to the current contract — add_term • contractr</title>
+<title>Overall wrapper to make new term objects — make_term • contractr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Add a new term to the current contract — add_term" />
+<meta property="og:title" content="Overall wrapper to make new term objects — make_term" />
 
-<meta property="og:description" content="`add_term` adds a step to the last location in the recipe." />
+<meta property="og:description" content="The function creates objects with class of `term`" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -154,35 +154,41 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add a new term to the current contract</h1>
+    <h1>Overall wrapper to make new term objects</h1>
     <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/term.R'><code>R/term.R</code></a></small>
-    <div class="hidden name"><code>add_term.Rd</code></div>
+    <div class="hidden name"><code>make_term.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>`add_term` adds a step to the last location in the recipe.</p>
+    <p>The function creates objects with class of `term`</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>add_term</span>(<span class='no'>contract</span>, <span class='no'>term</span>)</pre>
+    <pre class="usage"><span class='fu'>make_term</span>(<span class='no'>subclass</span>, <span class='no'>...</span>, <span class='kw'>.prefix</span> <span class='kw'>=</span> <span class='st'>"term_"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>contract</th>
-      <td><p>A [contract()].</p></td>
+      <th>subclass</th>
+      <td><p>A character string for the resulting class. For example,
+if `subclass = "blah"` the term object that is returned has class
+`clause_blah`.</p></td>
     </tr>
     <tr>
-      <th>object</th>
-      <td><p>A term object.</p></td>
+      <th>...</th>
+      <td><p>All arguments to the operator that should be returned.</p></td>
+    </tr>
+    <tr>
+      <th>.prefix</th>
+      <td><p>Prefix to the subclass created.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A updated [contract()] with the new term in the last slot.</p>
+    <p>An updated term with the new class.</p>
     
 
   </div>

@@ -2,18 +2,18 @@
 % Please edit documentation in R/term.R
 \name{add_term}
 \alias{add_term}
-\title{Overall wrapper for adding a new term to the current contract}
+\title{Add a new term to the current contract}
 \usage{
-add_term(contract, term, term_name)
+add_term(contract, term)
 }
 \arguments{
 \item{contract}{A [contract()].}
 
-\item{object}{A term to add to the contract.}
+\item{object}{A term object.}
 }
 \value{
 A updated [contract()] with the new term in the last slot.
 }
 \description{
-`add_term` adds a term to the last location in the contract.
+`add_term` adds a step to the last location in the recipe.
 }
