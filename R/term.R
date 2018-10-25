@@ -1,14 +1,52 @@
-#' Overall wrapper for adding a new term to the current contract
+#' @title Overall wrapper to make new term objects
 #'
-#' `add_term` adds a term to the last location in the contract.
+#' @description The function creates objects with class of `term`
+#' @param subclass A character string for the resulting class. For example,
+#'   if `subclass = "blah"` the term object that is returned has class
+#'   `clause_blah`.
+#' @param ... All arguments to the operator that should be returned.
+#' @param .prefix Prefix to the subclass created.
+#' @importFrom magrittr %>%
+#' @importFrom purrr some keep
+#' @keywords contract term
+#' @return An updated term with the new class.
+#' @export
+
+make_term <- function(subclass, ..., .prefix = "term_") {
+  structure(list(...),
+            class = c(paste0(.prefix, subclass), "term"))
+}
+
+
+#' Add a new term to the current contract
+#'
+#' `add_term` adds a step to the last location in the recipe.
 #'
 #' @param contract A [contract()].
-#' @param object A term to add to the contract.
+#' @param object A term object.
 #' @return A updated [contract()] with the new term in the last slot.
 #' @export
 
-add_term <- function(contract, term, term_name) {
-  names(term) <- term_name
+add_term <- function(contract, term) {
+
+  if(term$unique == T){
+  if(has_term(contract, get_term_type(term))){
+    stop("Contract can only hold 1 term of type ",get_term_type(term), call. = F)
+  }}
+
   contract$terms[[length(contract$terms) + 1]] <- term
   contract
+}
+
+
+has_term <- function(contract, term_type){
+
+  contract[["terms"]] %>%
+    purrr::some(inherits, term_type)
+}
+
+get_term_type <- function(term){
+  term %>%
+    class() %>%
+    purrr::keep(. != "term")
 }
