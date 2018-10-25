@@ -167,9 +167,16 @@ has_clause(con, "clause_start_date_")
 ```{r}
 cont <-
   make_contract() %>% 
-  add_counterparty("JP") %>% 
-  starting_from(dmy("01/01/2000"))
+  #add_counterparty("JP") %>% 
+  term_start(dmy("01/01/2000"))
 
+#View(cont)
+#unlist(cont$stipulations)
+#cont$stipulations
+#cont$stipulations
+#cont$stipulations[[1]]
+#cont$stipulations[[1]]
+#as.character(cont$stipulations[[1]])
 View(cont)
 cont
 ```
