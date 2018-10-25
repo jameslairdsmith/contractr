@@ -31,7 +31,7 @@ add_term <- function(contract, term) {
 
   if(term$unique == T){
   if(has_term(contract, get_term_type(term))){
-    stop("Contract can only hold 1 term of type ",get_term_type(term), call. = F)
+    stop("Contract can only hold 1 term of type ", get_term_type(term), call. = F)
   }}
 
   contract$terms[[length(contract$terms) + 1]] <- term
