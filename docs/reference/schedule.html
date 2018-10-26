@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • contractr</title>
+<title>Create the events from a contract — schedule • contractr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,7 +30,11 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Create the events from a contract — schedule" />
+
+<meta property="og:description" content="For a contract with at least one term and no missing stipulations
+create the financial events that ought result from it." />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -46,7 +50,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -149,90 +153,52 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Create the events from a contract</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/schedule.R'><code>R/schedule.R</code></a></small>
+    <div class="hidden name"><code>schedule.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p>For a contract with at least one term and no missing stipulations
+create the financial events that ought result from it.</p>
+    
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>schedule</span>(<span class='no'>object</span>, <span class='no'>...</span>)
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-basic-functions" class="hasAnchor"><a href="#section-basic-functions" class="anchor"></a>Basic Functions</h2>
-          <p class="section-desc"><p>Functions that are basic.</p></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="make_contract.html">make_contract()</a></code> </p>
-        </td>
-        <td><p>Create a tidy financial contract object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="schedule.html">schedule()</a></code> </p>
-        </td>
-        <td><p>Create the events from a contract</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-adding-terms" class="hasAnchor"><a href="#section-adding-terms" class="anchor"></a>Adding terms</h2>
-          <p class="section-desc"><p>Functions for adding terms</p></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="term_start.html">term_start()</a></code> </p>
-        </td>
-        <td><p>Add a start date to a contract</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-creating-custom-clauses" class="hasAnchor"><a href="#section-creating-custom-clauses" class="anchor"></a>Creating custom clauses</h2>
-          <p class="section-desc"><p>These fuctions can be used if you want to add new types of clauses or terms.</p></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="make_term.html">make_term()</a></code> </p>
-        </td>
-        <td><p>Overall wrapper to make new term objects</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="add_term.html">add_term()</a></code> </p>
-        </td>
-        <td><p>Add a new term to the current contract</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="add_stipulation.html">add_stipulation()</a></code> </p>
-        </td>
-        <td><p>Overall wrapper for adding a new term to the current contract</p></td>
-      </tr>
-    </tbody>
+<span class='co'># S3 method for contract</span>
+<span class='fu'>schedule</span>(<span class='no'>object</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>object</th>
+      <td><p>A contract with at least one term.</p></td>
+    </tr>
     </table>
-  </div>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>A tibble</p>
+    
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-basic-functions">Basic Functions</a></li>
-      <li><a href="#section-adding-terms">Adding terms</a></li>
-      <li><a href="#section-creating-custom-clauses">Creating custom clauses</a></li>
-    </ul>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
+
+    <h2>Author</h2>
+    
+James Laird-Smith
+
   </div>
 </div>
 

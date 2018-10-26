@@ -32,8 +32,9 @@ print.contract <- function(x, form_width = 30, ...) {
 
   if (length(x$terms) > 0) {
     cat("Clauses:\n")
-    for (i in seq_along(x$terms))
+    for (i in seq_along(x$terms)){
       print(x$terms[[i]], form_width = form_width)
+      cat("\n")}
   }
   invisible(x)
   }

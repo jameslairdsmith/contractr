@@ -5,6 +5,7 @@
 #' @param date The start date
 #' @keywords contract, inception
 #' @importFrom magrittr %>%
+#' @importFrom tibble tibble
 #' @export
 #' @examples
 #' library(magrittr)
@@ -31,7 +32,17 @@ term_start_new <- function(start_date, id){
       id = id,
       unique = T
     )
-  }
+}
+
+#' @export
+schedule.term_start <- function(object, ...) {
+
+  tibble::tibble(
+    evt_date = object$start_date,
+    evt_type = "start date",
+    evt_value = 0
+  )
+}
 
 print.term_start <- function(x, width = max(20, options()$width - 29), ...) {
   cat("Start date of", sep = "")

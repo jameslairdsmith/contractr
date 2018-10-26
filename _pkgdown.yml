@@ -39,6 +39,7 @@ reference:
       Functions that are basic.
     contents:
       - make_contract
+      - schedule
   - title: "Adding terms"
     desc: "Functions for adding terms"
     contents:
