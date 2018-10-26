@@ -182,11 +182,12 @@ cont
 ```
 
 ```{r}
-cont <- 
+a_contract <- 
   make_contract() %>% 
   term_start(dmy("01/01/2000")) 
 
-cont
+#View(cont)
+schedule(a_contract)
 ```
 
 
