@@ -184,8 +184,7 @@ cont
 ```{r}
 cont <- 
   make_contract() %>% 
-  term_start(dmy("01/01/2000")) %>% 
-  term_start(dmy("01/01/2000"))  
+  term_start(dmy("01/01/2000")) 
 
 cont
 ```
