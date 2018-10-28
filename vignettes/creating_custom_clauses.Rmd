@@ -1,10 +1,10 @@
 ---
-title: "Creating Custom Clauses"
+title: "Creating Custom Terms"
 author: "James Laird-Smith"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Creating Custom Clauses}
+  %\VignetteIndexEntry{Creating Custom Terms}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -16,3 +16,47 @@ knitr::opts_chunk$set(
 )
 ```
 
+## Introduction
+
+This vignette explains the process a user can follow to add their own custom terms to a contract object. Doing so shouldn't be necessary for most users as contractr is designed specifically so that most patterns of contractual events are already provided (either by a single function or by combining a number of these functions together). Nevertheless it is possible that some exotic event patterns^[If you think that a particular pattern of events is missing, feel free to create an issue on the contractr github repo where it can be discussed for inclusion.] are not catered for and so users will have to create their own. This process is also useful for anyone wanting to get a better understanding of how contractr works.
+
+Immediately below is the complete R script for the term_start() function. You should copy and paste this into a new R script as we will use it as the structure of the contract term. Don't worry about understanding in all right away, we will go through and explain the changes at each step.
+
+```{r eval=FALSE}
+term_start <-
+
+  function(contract, start_date, id = "start_date"){
+    contract %>%
+      add_term(
+        term_start_new(start_date = start_date, id = id)
+        ) %>%
+      add_stipulation(start_date, "start_date")
+}
+
+term_start_new <- function(start_date, id){
+    make_term(
+      subclass = "start",
+      start_date = start_date,
+      id = id,
+      unique = T
+    )
+}
+
+#' @export
+schedule.term_start <- function(object, ...) {
+
+  tibble::tibble(
+    evt_date = object$start_date,
+    evt_type = "start date",
+    evt_value = 0
+  )
+}
+
+print.term_start <- function(x, width = max(20, options()$width - 29), ...) {
+  cat("Start date of", sep = "")
+  cat(format(x$start_date, "%e %b %Y"), sep = "")
+  invisible(x)
+}
+```
+
+## Step 1: Make new term type
