@@ -175,6 +175,16 @@
       <td><p>An optional name for the event. Defaults to "start_date"
 (which is reccomended).</p></td>
     </tr>
+    <tr>
+      <th>payment</th>
+      <td><p>The amount paid at the start of the contract.
+Defaults to zero.</p></td>
+    </tr>
+    <tr>
+      <th>receipt</th>
+      <td><p>The amount recieved at the start of the contract.
+Defaults to zero.</p></td>
+    </tr>
     </table>
     
 
@@ -185,8 +195,7 @@
   <span class='fu'><a href='contract.html'>contract</a></span>() <span class='kw'>%&gt;%</span>
   <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/01/01"</span>))
 
-<span class='no'>a_contract</span></div><div class='output co'>#&gt; 
-#&gt; A Financial Contract
+<span class='no'>a_contract</span></div><div class='output co'>#&gt; A Financial Contract
 #&gt; 
 #&gt; Terms:
 #&gt; Start date of 1 Jan 2000</div><div class='input'>

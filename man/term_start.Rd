@@ -13,6 +13,12 @@ term_start(contract, start_date, id = "start_date")
 
 \item{id}{An optional name for the event. Defaults to "start_date"
 (which is reccomended).}
+
+\item{payment}{The amount paid at the start of the contract.
+Defaults to zero.}
+
+\item{receipt}{The amount recieved at the start of the contract.
+Defaults to zero.}
 }
 \description{
 This function can be used to specify the start date of a contract.

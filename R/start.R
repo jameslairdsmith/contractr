@@ -5,6 +5,10 @@
 #' @param start_date The start date to be specified.
 #' @param id An optional name for the event. Defaults to "start_date"
 #' (which is reccomended).
+#' @param payment The amount paid at the start of the contract.
+#' Defaults to zero.
+#' @param receipt The amount recieved at the start of the contract.
+#' Defaults to zero.
 #' @keywords contract, start, date
 #' @importFrom magrittr %>%
 #' @importFrom tibble tibble
