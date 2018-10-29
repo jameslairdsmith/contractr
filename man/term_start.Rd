@@ -20,13 +20,13 @@ This function can be used to specify the start date of a contract.
 \examples{
 library(magrittr)
 
-cont <-
+a_contract <-
   contract() \%>\%
   term_start(as.Date("2000/01/01"))
 
-cont
+a_contract
 
-cont \%>\% schedule()
+a_contract \%>\% schedule()
 }
 \keyword{contract,}
 \keyword{date}

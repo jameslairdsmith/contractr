@@ -12,13 +12,13 @@
 #' @examples
 #' library(magrittr)
 #'
-#' cont <-
+#' a_contract <-
 #'   contract() %>%
 #'   term_start(as.Date("2000/01/01"))
 #'
-#'cont
+#' a_contract
 #'
-#'cont %>% schedule()
+#' a_contract %>% schedule()
 
 term_start <-
   function(contract, start_date, id = "start_date"){
