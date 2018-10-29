@@ -15,23 +15,19 @@ navbar:
     reference:
       text: Reference
     other:
-      text: Other
+      text: Vignettes
       menu:
-      - text: Category A
-      - text: A different title
-        href: articles/creating_custom_clauses.html
-      - text: A second different title
-        href: articles/creating_custom_clauses.html
-      - text: A third different title
-        href: articles/creating_custom_clauses.html
+      - text: Other
+      - text: Nomenclature
+        href: articles/nomenclature.html
+      - text: FAQ
+        href: articles/faq.html
       - text: -------
-      - text: Category B
-      - text: A forth different title
-        href: articles/creating_custom_clauses.html
-      - text: A fifth different title
-        href: articles/creating_custom_clauses.html
-      - text: A sixth different title
-        href: articles/creating_custom_clauses.html
+      - text: Contributing
+      - text: Creating custom terms
+        href: articles/creating_custom_terms.html
+      - text: Internals
+        href: articles/internals.html
 
 reference:
   - title: "Basic Functions"
