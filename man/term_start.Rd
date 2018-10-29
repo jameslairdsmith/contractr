@@ -28,7 +28,7 @@ A contract object with the term added.
 This function can be used to specify the start date of a contract.
 }
 \details{
-If both `payment`` and `receipt` are specified,
+If both `payment` and `receipt` are specified,
 only the netted amount will be captured in the event.
 }
 \examples{

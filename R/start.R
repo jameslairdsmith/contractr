@@ -14,7 +14,7 @@
 #' @importFrom tibble tibble
 #' @export
 #' @return A contract object with the term added.
-#' @details If both `payment`` and `receipt` are specified,
+#' @details If both `payment` and `receipt` are specified,
 #' only the netted amount will be captured in the event.
 #' @examples
 #' library(magrittr)
