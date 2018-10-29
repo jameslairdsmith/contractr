@@ -6,6 +6,11 @@
 contractr is a grammar of financial contracts implemented in R. It is
 currently in the early stages of development.
 
+Financial analysis, on its most basic level, can be simplified into two
+components. The first is the contract or contracts which are made
+between different parties. The second are the events which result from
+these contracts.
+
 contractr provides a core set of functions which, when combined
 together, allow users to compose almost any type of financial contract.
 These contracts can then be be used to generate financial events, which
