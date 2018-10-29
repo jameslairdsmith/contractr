@@ -2,25 +2,32 @@
 % Please edit documentation in R/start.R
 \name{term_start}
 \alias{term_start}
-\title{Add a start date to a contract}
+\title{Set the start date of a contract}
 \usage{
 term_start(contract, start_date, id = "start_date")
 }
 \arguments{
-\item{contract}{A contract for which the start date is to be specified.}
+\item{contract}{The contract for which the start date is to be specified.}
 
-\item{date}{The start date}
+\item{start_date}{The start date to be specified.}
+
+\item{id}{An optional name for the event. Defaults to "start_date"
+(which is reccomended).}
 }
 \description{
-This function specifies the start date to a tidy contract.
+This function can be used to specify the start date of a contract.
 }
 \examples{
 library(magrittr)
-library(lubridate)
 
-make_contract() \%>\%
-  term_start(dmy("01/01/2000"))
+cont <-
+  contract() \%>\%
+  term_start(as.Date("2000/01/01"))
 
+cont
+
+cont \%>\% schedule()
 }
 \keyword{contract,}
-\keyword{inception}
+\keyword{date}
+\keyword{start,}

@@ -1,22 +1,26 @@
-#' @title Add a start date to a contract
+#' @title Set the start date of a contract
 #'
-#' @description This function specifies the start date to a tidy contract.
-#' @param contract A contract for which the start date is to be specified.
-#' @param date The start date
-#' @keywords contract, inception
+#' @description This function can be used to specify the start date of a contract.
+#' @param contract The contract for which the start date is to be specified.
+#' @param start_date The start date to be specified.
+#' @param id An optional name for the event. Defaults to "start_date"
+#' (which is reccomended).
+#' @keywords contract, start, date
 #' @importFrom magrittr %>%
 #' @importFrom tibble tibble
 #' @export
 #' @examples
 #' library(magrittr)
-#' library(lubridate)
 #'
-#' make_contract() %>%
-#'   term_start(dmy("01/01/2000"))
+#' cont <-
+#'   contract() %>%
+#'   term_start(as.Date("2000/01/01"))
 #'
+#'cont
+#'
+#'cont %>% schedule()
 
 term_start <-
-
   function(contract, start_date, id = "start_date"){
     contract %>%
       add_term(
@@ -39,7 +43,7 @@ schedule.term_start <- function(object, ...) {
 
   tibble::tibble(
     evt_date = object$start_date,
-    evt_type = "start date",
+    evt_type = object$id,
     evt_value = 0
   )
 }
