@@ -34,6 +34,7 @@ reference:
     desc: >
       Functions that are basic.
     contents:
+      - contractr-package
       - make_contract
       - schedule
   - title: "Adding terms"

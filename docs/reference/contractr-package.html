@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>contractr: contractr is a grammar of financial contracts. — contractr-package • contractr</title>
+<title>contractr: a grammar of financial contracts — contractr-package • contractr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,14 @@
 
 
 
-<meta property="og:title" content="contractr: contractr is a grammar of financial contracts. — contractr-package" />
+<meta property="og:title" content="contractr: a grammar of financial contracts — contractr-package" />
 
-<meta property="og:description" content="contractr is a grammar of financial contracts implemented in R. It can be used to compose financial contracts of different types." />
+<meta property="og:description" content="The `contractr` package can be used to compose financial contracts
+  in R. Superficially, it may appear that financial contracts exist
+  in huge variety, but in reality almost all are combinations of a
+  few event patterns. `contractr` has built-in functions for each of
+  these patterns, any of which can be added to contract as a &quot;term&quot;
+  of that contract. Thus:" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -145,18 +150,42 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>contractr: contractr is a grammar of financial contracts.</h1>
+    <h1>contractr: a grammar of financial contracts</h1>
     <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/contractr-package.R'><code>R/contractr-package.R</code></a></small>
     <div class="hidden name"><code>contractr-package.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>contractr is a grammar of financial contracts implemented in R. It can be used to compose financial contracts of different types.</p>
+    <p>The `contractr` package can be used to compose financial contracts
+  in R. Superficially, it may appear that financial contracts exist
+  in huge variety, but in reality almost all are combinations of a
+  few event patterns. `contractr` has built-in functions for each of
+  these patterns, any of which can be added to contract as a "term"
+  of that contract. Thus:</p>
     
     </div>
 
         
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <ol>
+<li><p>A contract consists of one or more terms that determine the
+ events that result from the contract.</p></li>
+<li><p>Term can be added  to a contact sequentially using pipes.</p></li>
+</ol>
+    
+    <h2 class="hasAnchor" id="basic-functions"><a class="anchor" href="#basic-functions"></a>Basic Functions</h2>
+
+    
+    <p>The three main functions in contractr are [contract()], [draft()],
+  and [schedule()].</p>
+<p>[contract()] creates an empty contract object. to which terms
+  can be added. [draft()] fills in the missing elements of a
+  contract given the information already added to the contract
+  or provided separately. Lastly the [schedule()] function returns
+  the events that result from the contract.</p>
+    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Useful links:</p><ul>
@@ -170,6 +199,10 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       
+      <li><a href="#details">Details</a></li>
+
+      <li><a href="#basic-functions">Basic Functions</a></li>
+
       <li><a href="#see-also">See also</a></li>
           </ul>
 
