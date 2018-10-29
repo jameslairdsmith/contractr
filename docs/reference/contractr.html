@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Overall wrapper for adding a new term to the current contract — add_stipulation • contractr</title>
+<title>contractr: a grammar of financial contracts — contractr • contractr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,14 @@
 
 
 
-<meta property="og:title" content="Overall wrapper for adding a new term to the current contract — add_stipulation" />
+<meta property="og:title" content="contractr: a grammar of financial contracts — contractr" />
 
-<meta property="og:description" content="`add_stipulation` adds a term to the last location in the contract." />
+<meta property="og:description" content="The `contractr` package can be used to compose financial contracts
+  in R. Superficially, it may appear that financial contracts exist
+  in huge variety, but in reality almost all are combinations of a
+  few event patterns. `contractr` has built-in functions for each of
+  these patterns, any of which can be added to contract as a &quot;term&quot;
+  of that contract. Thus:" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -146,45 +151,75 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Overall wrapper for adding a new term to the current contract</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/stipulation.R'><code>R/stipulation.R</code></a></small>
-    <div class="hidden name"><code>add_stipulation.Rd</code></div>
+    <h1>contractr: a grammar of financial contracts</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/contractr-package.R'><code>R/contractr-package.R</code></a></small>
+    <div class="hidden name"><code>contractr.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>`add_stipulation` adds a term to the last location in the contract.</p>
+    <p>The `contractr` package can be used to compose financial contracts
+  in R. Superficially, it may appear that financial contracts exist
+  in huge variety, but in reality almost all are combinations of a
+  few event patterns. `contractr` has built-in functions for each of
+  these patterns, any of which can be added to contract as a "term"
+  of that contract. Thus:</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>add_stipulation</span>(<span class='no'>contract</span>, <span class='no'>stipulation</span>, <span class='no'>stipulation_name</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>contract</th>
-      <td><p>A [contract()].</p></td>
-    </tr>
-    <tr>
-      <th>object</th>
-      <td><p>A stipulation to add to the contract.</p></td>
-    </tr>
-    </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+        
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>A updated [contract()] with the new term in the last slot.</p>
+    <ol>
+<li><p>A contract consists of one or more terms that determine the
+ events that result from the contract.</p></li>
+<li><p>Term can be added  to a contact sequentially using pipes.</p></li>
+</ol>
+    
+    <h2 class="hasAnchor" id="basic-functions"><a class="anchor" href="#basic-functions"></a>Basic Functions</h2>
+
+    
+    <p>The three main functions in contractr are [contract()], [draft()],
+  and [schedule()].</p>
+<p>[contract()] creates an empty contract object. to which terms
+  can be added. [draft()] fills in the missing elements of a
+  contract given the information already added to the contract
+  or provided separately. Lastly the [schedule()] function returns
+  the events that result from the contract.</p>
+    
+    <h2 class="hasAnchor" id="term-functions"><a class="anchor" href="#term-functions"></a>Term Functions</h2>
+
+    
+    <p>These functions are used to add new terms to the contract and have the
+  naming convention `"term_x"`. For example,
+  [term_start()] stipulates the start date of the contract.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Useful links:</p><ul>
+<li><p><a href='https://github.com/jameslairdsmith/contractr'>https://github.com/jameslairdsmith/contractr</a></p></li>
+<li><p>Report bugs at <a href='https://github.com/jameslairdsmith/contractr/issues'>https://github.com/jameslairdsmith/contractr/issues</a></p></li>
+</ul></div>
     
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#value">Value</a></li>
+      <li><a href="#details">Details</a></li>
+
+      <li><a href="#basic-functions">Basic Functions</a></li>
+
+      <li><a href="#term-functions">Term Functions</a></li>
+
+      <li><a href="#see-also">See also</a></li>
           </ul>
+
+    <h2>Author</h2>
+    
+<strong>Maintainer</strong>: James Laird-Smith <a href='mailto:jameslairdsmith@gmail.com'>jameslairdsmith@gmail.com</a>
+
 
   </div>
 </div>
