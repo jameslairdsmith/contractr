@@ -28,7 +28,7 @@ contract <- function(){
 #' @export
 
 print.contract <- function(x, form_width = 30, ...) {
-  cat("\nA Financial Contract\n\n")
+  cat("A Financial Contract\n\n")
 
   if (length(x$terms) > 0) {
     cat("Terms:\n")
