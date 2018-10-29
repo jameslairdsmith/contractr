@@ -13,31 +13,54 @@
 #' @importFrom magrittr %>%
 #' @importFrom tibble tibble
 #' @export
+#' @return A contract object with the term added.
+#' @details If both `payment`` and `receipt` are specified,
+#' only the netted amount will be captured in the event.
 #' @examples
 #' library(magrittr)
 #'
-#' a_contract <-
+#' contract_a <-
 #'   contract() %>%
 #'   term_start(as.Date("2000/01/01"))
 #'
-#' a_contract
+#' contract_a
 #'
-#' a_contract %>% schedule()
+#' contract_a %>% schedule()
+#'
+#' contract() %>%
+#'  term_start(as.Date("2000/02/01"), receipt = 100) %>%
+#'  schedule()
+#'
+#' contract() %>%
+#'  term_start(as.Date("2000/03/01"), payment = 50) %>%
+#'  schedule()
+#'
+#' contract() %>%
+#'  term_start(as.Date("2000/04/01"), payment = 50, receipt = 100) %>%
+#'  schedule()
 
 term_start <-
-  function(contract, start_date, id = "start_date"){
+  function(contract, start_date, id = "start_date", payment = 0, receipt = 0){
+
     contract %>%
       add_term(
-        term_start_new(start_date = start_date, id = id)
+        term_start_new(
+          start_date = start_date,
+          id = id,
+          payment = payment,
+          receipt = receipt
+          )
         ) %>%
       add_stipulation(start_date, "start_date")
 }
 
-term_start_new <- function(start_date, id){
+term_start_new <- function(start_date, id, payment, receipt){
     make_term(
       subclass = "start",
       start_date = start_date,
       id = id,
+      payment = payment,
+      receipt = receipt,
       unique = T
     )
 }
@@ -45,10 +68,12 @@ term_start_new <- function(start_date, id){
 #' @export
 schedule.term_start <- function(object, ...) {
 
+  consideration <- object$receipt - object$payment
+
   tibble::tibble(
     evt_date = object$start_date,
     evt_type = object$id,
-    evt_value = 0
+    evt_value = consideration
   )
 }
 

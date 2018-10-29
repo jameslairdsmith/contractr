@@ -157,7 +157,8 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>term_start</span>(<span class='no'>contract</span>, <span class='no'>start_date</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"start_date"</span>)</pre>
+    <pre class="usage"><span class='fu'>term_start</span>(<span class='no'>contract</span>, <span class='no'>start_date</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"start_date"</span>, <span class='kw'>payment</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>receipt</span> <span class='kw'>=</span> <span class='fl'>0</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -187,28 +188,59 @@ Defaults to zero.</p></td>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A contract object with the term added.</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>If both `payment`` and `receipt` are specified,
+only the netted amount will be captured in the event.</p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>magrittr</span>)
 
-<span class='no'>a_contract</span> <span class='kw'>&lt;-</span>
+<span class='no'>contract_a</span> <span class='kw'>&lt;-</span>
   <span class='fu'><a href='contract.html'>contract</a></span>() <span class='kw'>%&gt;%</span>
   <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/01/01"</span>))
 
-<span class='no'>a_contract</span></div><div class='output co'>#&gt; A Financial Contract
+<span class='no'>contract_a</span></div><div class='output co'>#&gt; A Financial Contract
 #&gt; 
 #&gt; Terms:
 #&gt; Start date of 1 Jan 2000</div><div class='input'>
-<span class='no'>a_contract</span> <span class='kw'>%&gt;%</span> <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
+<span class='no'>contract_a</span> <span class='kw'>%&gt;%</span> <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
 #&gt;   evt_date   evt_type   evt_value
 #&gt;   &lt;date&gt;     &lt;chr&gt;          &lt;dbl&gt;
-#&gt; 1 2000-01-01 start_date         0</div></pre>
+#&gt; 1 2000-01-01 start_date         0</div><div class='input'>
+<span class='fu'><a href='contract.html'>contract</a></span>() <span class='kw'>%&gt;%</span>
+ <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/02/01"</span>), <span class='kw'>receipt</span> <span class='kw'>=</span> <span class='fl'>100</span>) <span class='kw'>%&gt;%</span>
+ <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
+#&gt;   evt_date   evt_type   evt_value
+#&gt;   &lt;date&gt;     &lt;chr&gt;          &lt;dbl&gt;
+#&gt; 1 2000-02-01 start_date       100</div><div class='input'>
+<span class='fu'><a href='contract.html'>contract</a></span>() <span class='kw'>%&gt;%</span>
+ <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/03/01"</span>), <span class='kw'>payment</span> <span class='kw'>=</span> <span class='fl'>50</span>) <span class='kw'>%&gt;%</span>
+ <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
+#&gt;   evt_date   evt_type   evt_value
+#&gt;   &lt;date&gt;     &lt;chr&gt;          &lt;dbl&gt;
+#&gt; 1 2000-03-01 start_date       -50</div><div class='input'>
+<span class='fu'><a href='contract.html'>contract</a></span>() <span class='kw'>%&gt;%</span>
+ <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/04/01"</span>), <span class='kw'>payment</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>receipt</span> <span class='kw'>=</span> <span class='fl'>100</span>) <span class='kw'>%&gt;%</span>
+ <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
+#&gt;   evt_date   evt_type   evt_value
+#&gt;   &lt;date&gt;     &lt;chr&gt;          &lt;dbl&gt;
+#&gt; 1 2000-04-01 start_date        50</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+      
       <li><a href="#examples">Examples</a></li>
     </ul>
 

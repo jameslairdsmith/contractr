@@ -4,7 +4,8 @@
 \alias{term_start}
 \title{Set the start date of a contract}
 \usage{
-term_start(contract, start_date, id = "start_date")
+term_start(contract, start_date, id = "start_date", payment = 0,
+  receipt = 0)
 }
 \arguments{
 \item{contract}{The contract for which the start date is to be specified.}
@@ -20,19 +21,38 @@ Defaults to zero.}
 \item{receipt}{The amount recieved at the start of the contract.
 Defaults to zero.}
 }
+\value{
+A contract object with the term added.
+}
 \description{
 This function can be used to specify the start date of a contract.
+}
+\details{
+If both `payment`` and `receipt` are specified,
+only the netted amount will be captured in the event.
 }
 \examples{
 library(magrittr)
 
-a_contract <-
+contract_a <-
   contract() \%>\%
   term_start(as.Date("2000/01/01"))
 
-a_contract
+contract_a
 
-a_contract \%>\% schedule()
+contract_a \%>\% schedule()
+
+contract() \%>\%
+ term_start(as.Date("2000/02/01"), receipt = 100) \%>\%
+ schedule()
+
+contract() \%>\%
+ term_start(as.Date("2000/03/01"), payment = 50) \%>\%
+ schedule()
+
+contract() \%>\%
+ term_start(as.Date("2000/04/01"), payment = 50, receipt = 100) \%>\%
+ schedule()
 }
 \keyword{contract,}
 \keyword{date}
