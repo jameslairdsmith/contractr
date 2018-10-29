@@ -6,6 +6,8 @@ navbar:
     left:  [home, start, articles, other, reference]
     right: [github]
   components:
+    home:
+      text: " Home"
     start:
       text: Getting Started
       href: articles/index.html
@@ -35,7 +37,7 @@ reference:
       Functions that are basic.
     contents:
       - contractr-package
-      - make_contract
+      - contract
       - schedule
   - title: "Adding terms"
     desc: "Functions for adding terms"
