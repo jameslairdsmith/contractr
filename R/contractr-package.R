@@ -23,5 +23,12 @@
 #'   or provided separately. Lastly the [schedule()] function returns
 #'   the events that result from the contract.
 #'
+#' @section Term Functions:
+#' These functions are used to add new terms to the contract and have the
+#'   naming convention `"term_x"`. For example,
+#'   [term_start()] stipulates the start date of the contract.
+#' @docType package
+#' @name contractr
+#'
 #' @keywords internal
 "_PACKAGE"
