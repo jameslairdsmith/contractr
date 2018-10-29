@@ -2,9 +2,8 @@ pandoc: 2.2.1
 pkgdown: 1.1.0
 pkgdown_sha: ~
 articles:
-  creating_custom_clauses: creating_custom_clauses.html
+  creating_custom_terms: creating_custom_terms.html
   faq: faq.html
   internals: internals.html
-  multi-currency: multi-currency.html
   nomenclature: nomenclature.html
 

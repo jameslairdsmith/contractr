@@ -1,7 +1,7 @@
 ---
 title: "Internals of contracr"
 author: "James Laird-Smith"
-date: "`r Sys.Date()`"
+date: "29/10/2018"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Internals of contractr}
