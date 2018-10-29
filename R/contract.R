@@ -5,7 +5,7 @@
 #' @importFrom tibble tibble
 #' @export
 
-make_contract <- function(){
+contract <- function(){
 
   out <- list(
     terms = list(),
