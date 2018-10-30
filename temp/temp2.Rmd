@@ -13,7 +13,7 @@ library(lubridate)
 contract() %>% 
   term_start(
     as.Date("2000/01/01"), 
-    id = "Inception date",
+    id = "Purchase date",
     payment = 1000,
     receipt = 50
     ) %>% 

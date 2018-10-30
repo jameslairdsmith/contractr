@@ -30,7 +30,7 @@
 #' contract_a %>% schedule()
 #'
 #' contract() %>%
-#'  term_start(as.Date("2000/01/01"), id = "Inception date") %>%
+#'  term_start(as.Date("2000/01/01"), id = "purchase date") %>%
 #'  schedule()
 #'
 #' contract() %>%
