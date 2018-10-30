@@ -36,7 +36,6 @@ reference:
     desc: >
       Functions that are basic.
     contents:
-      - contractr-package
       - contract
       - schedule
   - title: "Adding terms"
