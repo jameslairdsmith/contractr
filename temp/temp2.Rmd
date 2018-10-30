@@ -1,0 +1,23 @@
+---
+title: "Temp2"
+output: NA
+---
+
+
+```{r setup}
+library(magrittr)
+library(lubridate)
+```
+
+```{r}
+contract() %>% 
+  term_start(
+    as.Date("2000/01/01"), 
+    id = "Inception date",
+    payment = 1000,
+    receipt = 50
+    ) %>% 
+  schedule()
+
+```
+
