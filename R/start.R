@@ -5,7 +5,7 @@
 #' Note that if both `receipt` and `payment` are specified, the net amount
 #' (`receipt` - `payment`) will be the amount shown in the event.
 #'
-#' @param contract The contract for which the start date is to be specified.
+#' @param contract The contract for which the `start date` is to be specified.
 #' @param start_date The start date to be specified.
 #' @param id An optional name for the event. Defaults to "start_date"
 #' (which is reccomended).

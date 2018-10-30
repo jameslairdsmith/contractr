@@ -7,13 +7,13 @@
 add_stipulation(contract, stipulation, stipulation_name)
 }
 \arguments{
-\item{contract}{A [contract()].}
+\item{contract}{A \code{\link[=contract]{contract()}}.}
 
 \item{object}{A stipulation to add to the contract.}
 }
 \value{
-A updated [contract()] with the new term in the last slot.
+A updated \code{\link[=contract]{contract()}} with the new term in the last slot.
 }
 \description{
-`add_stipulation` adds a term to the last location in the contract.
+\code{add_stipulation} adds a term to the last location in the contract.
 }

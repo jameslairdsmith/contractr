@@ -8,8 +8,8 @@ make_term(subclass, ..., .prefix = "term_")
 }
 \arguments{
 \item{subclass}{A character string for the resulting class. For example,
-if `subclass = "blah"` the term object that is returned has class
-`clause_blah`.}
+if \code{subclass = "blah"} the term object that is returned has class
+\code{clause_blah}.}
 
 \item{...}{All arguments to the operator that should be returned.}
 
@@ -19,7 +19,7 @@ if `subclass = "blah"` the term object that is returned has class
 An updated term with the new class.
 }
 \description{
-The function creates objects with class of `term`
+The function creates objects with class of \code{term}
 }
 \keyword{contract}
 \keyword{term}

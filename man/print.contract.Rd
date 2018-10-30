@@ -7,7 +7,7 @@
 \method{print}{contract}(x, form_width = 30, ...)
 }
 \arguments{
-\item{x}{A `contract` object}
+\item{x}{A \code{contract} object}
 
 \item{form_width}{The number of characters used to print}
 

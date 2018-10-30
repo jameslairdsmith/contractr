@@ -32,12 +32,12 @@
 
 <meta property="og:title" content="contractr: a grammar of financial contracts — contractr" />
 
-<meta property="og:description" content="The `contractr` package can be used to compose financial contracts
-  in R. Superficially, it may appear that financial contracts exist
-  in huge variety, but in reality almost all are combinations of a
-  few event patterns. `contractr` has built-in functions for each of
-  these patterns, any of which can be added to contract as a &quot;term&quot;
-  of that contract. Thus:" />
+<meta property="og:description" content="The contractr package can be used to compose financial contracts
+in R. Superficially, it may appear that financial contracts exist
+in huge variety, but in reality almost all are combinations of a
+few event patterns. contractr has built-in functions for each of
+these patterns, any of which can be added to contract as a &quot;term&quot;
+of that contract. Thus:" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -158,12 +158,12 @@
 
     <div class="ref-description">
     
-    <p>The `contractr` package can be used to compose financial contracts
-  in R. Superficially, it may appear that financial contracts exist
-  in huge variety, but in reality almost all are combinations of a
-  few event patterns. `contractr` has built-in functions for each of
-  these patterns, any of which can be added to contract as a "term"
-  of that contract. Thus:</p>
+    <p>The <code>contractr</code> package can be used to compose financial contracts
+in R. Superficially, it may appear that financial contracts exist
+in huge variety, but in reality almost all are combinations of a
+few event patterns. <code>contractr</code> has built-in functions for each of
+these patterns, any of which can be added to contract as a "term"
+of that contract. Thus:</p>
     
     </div>
 
@@ -172,27 +172,27 @@
 
     <ol>
 <li><p>A contract consists of one or more terms that determine the
- events that result from the contract.</p></li>
+events that result from the contract.</p></li>
 <li><p>Term can be added  to a contact sequentially using pipes.</p></li>
 </ol>
     
     <h2 class="hasAnchor" id="basic-functions"><a class="anchor" href="#basic-functions"></a>Basic Functions</h2>
 
     
-    <p>The three main functions in contractr are [contract()], [draft()],
-  and [schedule()].</p>
-<p>[contract()] creates an empty contract object. to which terms
-  can be added. [draft()] fills in the missing elements of a
-  contract given the information already added to the contract
-  or provided separately. Lastly the [schedule()] function returns
-  the events that result from the contract.</p>
+    <p>The three main functions in contractr are <code><a href='contract.html'>contract()</a></code>, <code>draft()</code>,
+and <code><a href='schedule.html'>schedule()</a></code>.</p>
+<p><code><a href='contract.html'>contract()</a></code> creates an empty contract object. to which terms
+can be added. <code>draft()</code> fills in the missing elements of a
+contract given the information already added to the contract
+or provided separately. Lastly the <code><a href='schedule.html'>schedule()</a></code> function returns
+the events that result from the contract.</p>
     
     <h2 class="hasAnchor" id="term-functions"><a class="anchor" href="#term-functions"></a>Term Functions</h2>
 
     
     <p>These functions are used to add new terms to the contract and have the
-  naming convention `"term_x"`. For example,
-  [term_start()] stipulates the start date of the contract.</p>
+naming convention <code>"term_x"</code>. For example,
+<code><a href='term_start.html'>term_start()</a></code> stipulates the start date of the contract.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 

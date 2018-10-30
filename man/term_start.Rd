@@ -8,7 +8,7 @@ term_start(contract, start_date, id = "start_date", payment = 0,
   receipt = 0)
 }
 \arguments{
-\item{contract}{The contract for which the start date is to be specified.}
+\item{contract}{The contract for which the \code{start date} is to be specified.}
 
 \item{start_date}{The start date to be specified.}
 
@@ -28,8 +28,8 @@ A contract object with the term added.
 This function can be used to specify the start date of a contract.
 }
 \details{
-Note that if both `receipt` and `payment` are specified, the net amount
-(`receipt` - `payment`) will be the amount shown in the event.
+Note that if both \code{receipt} and \code{payment} are specified, the net amount
+(\code{receipt} - \code{payment}) will be the amount shown in the event.
 }
 \examples{
 library(magrittr)

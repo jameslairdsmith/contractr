@@ -7,13 +7,13 @@
 add_term(contract, term)
 }
 \arguments{
-\item{contract}{A [contract()].}
+\item{contract}{A \code{\link[=contract]{contract()}}.}
 
 \item{object}{A term object.}
 }
 \value{
-A updated [contract()] with the new term in the last slot.
+A updated \code{\link[=contract]{contract()}} with the new term in the last slot.
 }
 \description{
-`add_term` adds a step to the last location in the recipe.
+\code{add_term} adds a step to the last location in the recipe.
 }
