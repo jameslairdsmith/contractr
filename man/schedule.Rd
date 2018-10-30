@@ -3,17 +3,17 @@
 \name{schedule}
 \alias{schedule}
 \alias{schedule.contract}
-\title{Create the events from a contract}
+\title{Create the events of a contract}
 \usage{
 schedule(object, ...)
 
-\method{schedule}{contract}(object)
+\method{schedule}{contract}(contract)
 }
 \arguments{
-\item{object}{A contract with at least one term.}
+\item{contract}{A contract with at least one term.}
 }
 \value{
-A tibble
+A tibble housing the contract's events.
 }
 \description{
 For a contract with at least one term and no missing stipulations
