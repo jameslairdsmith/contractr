@@ -2,7 +2,7 @@
 % Please edit documentation in R/term.R
 \name{add_term}
 \alias{add_term}
-\title{Add a new term to the current contract}
+\title{Add a new term contract}
 \usage{
 add_term(contract, term)
 }
@@ -15,5 +15,7 @@ add_term(contract, term)
 A updated \code{\link[=contract]{contract()}} with the new term in the last slot.
 }
 \description{
-\code{add_term} adds a step to the last location in the recipe.
+\code{add_term} adds a term to the last location in the contract.
+The function is most useful as a wrapper for the creation of
+custom terms (in conjuction with \code{make_term()}.
 }

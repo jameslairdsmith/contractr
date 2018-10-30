@@ -2,24 +2,29 @@
 % Please edit documentation in R/term.R
 \name{make_term}
 \alias{make_term}
-\title{Overall wrapper to make new term objects}
+\title{Make new term objects}
 \usage{
 make_term(subclass, ..., .prefix = "term_")
 }
 \arguments{
 \item{subclass}{A character string for the resulting class. For example,
 if \code{subclass = "blah"} the term object that is returned has class
-\code{clause_blah}.}
+\code{term_blah}. Subclasses should describe the kind of term that is
+being created; for example, the term at the begining of the
+contract is called \code{term_start}.}
 
-\item{...}{All arguments to the operator that should be returned.}
+\item{...}{All arguments to the term that should be returned.}
 
-\item{.prefix}{Prefix to the subclass created.}
+\item{.prefix}{Prefix to the subclass created. Defaults to
+\code{term_} which is reccomended.}
 }
 \value{
-An updated term with the new class.
+An contractual term with the new class.
 }
 \description{
-The function creates objects with class of \code{term}
+The function is an overall wrapper for creating objects
+with class of \code{term}. These are used as part of the
+process of adding custom terms.
 }
 \keyword{contract}
 \keyword{term}
