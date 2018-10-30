@@ -1,14 +1,18 @@
-#' Overall wrapper for adding a new term to the current contract
+#' Add a stipulation to a contract
 #'
-#' `add_stipulation` adds a term to the last location in the contract.
+#' The function allows for the adding of a stipulation
+#' to the list of stipulations in a contract. This is most
+#' useful when used as a wrapper together with `add_term()`
+#' and `make_term()` for creating a custom term type.
 #'
-#' @param contract A [contract()].
-#' @param object A stipulation to add to the contract.
-#' @return A updated [contract()] with the new term in the last slot.
+#' @param contract The `contract` to which the stipulation is to be added.
+#' @param stipulation_value The value of the stipulation.
+#' @param stipulation_name The name of the stipulation.
+#' @return A updated `contract` with the new stipulation in the last slot.
 #' @export
 
-add_stipulation <- function(contract, stipulation, stipulation_name) {
-  names(stipulation) <- stipulation_name
-  contract$stipulations[[length(contract$stipulations) + 1]] <- stipulation
+add_stipulation <- function(contract, stipulation_value, stipulation_name) {
+  names(stipulation_value) <- stipulation_name
+  contract$stipulations[[length(contract$stipulations) + 1]] <- stipulation_value
   contract
 }
