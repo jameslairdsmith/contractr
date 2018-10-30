@@ -10,8 +10,7 @@
 #' @examples
 #' library(magrittr)
 #'
-#' contract_a <-
-#'   contract() %>%
+#' contract_a <- contract()
 #'
 #' contract_a
 #'

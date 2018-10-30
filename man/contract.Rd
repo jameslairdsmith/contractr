@@ -17,8 +17,7 @@ or stipulations attached to the contract when it is first created.
 \examples{
 library(magrittr)
 
-contract_a <-
-  contract() \%>\%
+contract_a <- contract()
 
 contract_a
 
