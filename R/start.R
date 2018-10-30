@@ -16,6 +16,7 @@
 #' @keywords contract, start, date
 #' @importFrom magrittr %>%
 #' @importFrom tibble tibble
+#' @importFrom rlang enexpr
 #' @export
 #' @return A contract object with the term added.
 #' @examples
@@ -46,26 +47,28 @@
 #'  schedule()
 
 term_start <-
-  function(contract, start_date, id = "start_date", payment = 0, receipt = 0){
+  function(contract, start_date, id = "start_date", payment = 0, receipt = 0, consideration){
     contract %>%
       add_term(
         term_start_new(
           start_date = start_date,
           id = id,
           payment = payment,
-          receipt = receipt
+          receipt = receipt,
+          consideration = rlang::enexpr(consideration)
           )
         ) %>%
       add_stipulation(start_date, "start_date")
 }
 
-term_start_new <- function(start_date, id, payment, receipt){
+term_start_new <- function(start_date, id, payment, receipt, consideration){
     make_term(
       subclass = "start",
       start_date = start_date,
       id = id,
       payment = payment,
       receipt = receipt,
+      consideration = consideration,
       unique = T
     )
 }
