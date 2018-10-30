@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Overall wrapper for adding a new term to the current contract — add_stipulation • contractr</title>
+<title>Add a stipulation to a contract — add_stipulation • contractr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,12 @@
 
 
 
-<meta property="og:title" content="Overall wrapper for adding a new term to the current contract — add_stipulation" />
+<meta property="og:title" content="Add a stipulation to a contract — add_stipulation" />
 
-<meta property="og:description" content="add_stipulation adds a term to the last location in the contract." />
+<meta property="og:description" content="The function allows for the adding of a stipulation
+to the list of stipulations in a contract. This is most
+useful when used as a wrapper together with add_term()
+and make_term() for creating a custom term type." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -146,35 +149,42 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Overall wrapper for adding a new term to the current contract</h1>
+    <h1>Add a stipulation to a contract</h1>
     <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/stipulation.R'><code>R/stipulation.R</code></a></small>
     <div class="hidden name"><code>add_stipulation.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p><code>add_stipulation</code> adds a term to the last location in the contract.</p>
+    <p>The function allows for the adding of a stipulation
+to the list of stipulations in a contract. This is most
+useful when used as a wrapper together with <code><a href='add_term.html'>add_term()</a></code>
+and <code><a href='make_term.html'>make_term()</a></code> for creating a custom term type.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>add_stipulation</span>(<span class='no'>contract</span>, <span class='no'>stipulation</span>, <span class='no'>stipulation_name</span>)</pre>
+    <pre class="usage"><span class='fu'>add_stipulation</span>(<span class='no'>contract</span>, <span class='no'>stipulation_value</span>, <span class='no'>stipulation_name</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>contract</th>
-      <td><p>A <code><a href='contract.html'>contract()</a></code>.</p></td>
+      <td><p>The <code>contract</code> to which the stipulation is to be added.</p></td>
     </tr>
     <tr>
-      <th>object</th>
-      <td><p>A stipulation to add to the contract.</p></td>
+      <th>stipulation_value</th>
+      <td><p>The value of the stipulation.</p></td>
+    </tr>
+    <tr>
+      <th>stipulation_name</th>
+      <td><p>The name of the stipulation.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A updated <code><a href='contract.html'>contract()</a></code> with the new term in the last slot.</p>
+    <p>A updated <code>contract</code> with the new stipulation in the last slot.</p>
     
 
   </div>
