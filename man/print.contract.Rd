@@ -19,6 +19,3 @@ The original object (invisibly)
 \description{
 Print a Contract
 }
-\author{
-James Laird-Smith
-}

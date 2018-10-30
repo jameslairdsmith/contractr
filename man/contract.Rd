@@ -2,11 +2,27 @@
 % Please edit documentation in R/contract.R
 \name{contract}
 \alias{contract}
-\title{Create a tidy financial contract object}
+\title{Create a financial contract}
 \usage{
 contract()
 }
+\value{
+A contract object.
+}
 \description{
-This function creates a financial contract object to which contractual terms can be added.
+This function creates a financial contract object
+to which contractual terms can then be added. There are no terms
+or stipulations attached to the contract when it is first created.
+}
+\examples{
+library(magrittr)
+
+contract_a <-
+  contract() \%>\%
+
+contract_a
+
+contract_a \%>\%
+  term_start(as.Date("2000/01/01"))
 }
 \keyword{contract}
