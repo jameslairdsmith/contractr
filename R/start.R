@@ -1,4 +1,4 @@
-#' Set the start date of a contract
+#' Set the start details of a contract
 #'
 #' This function can be used to specify the start date of a contract.
 #'

@@ -2,7 +2,7 @@
 % Please edit documentation in R/start.R
 \name{term_start}
 \alias{term_start}
-\title{Set the start date of a contract}
+\title{Set the start details of a contract}
 \usage{
 term_start(contract, start_date, id = "start_date", payment = 0,
   receipt = 0)
