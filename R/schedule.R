@@ -1,3 +1,4 @@
+#' @rdname schedule
 #' @export
 
 schedule <- function(object, ...)
