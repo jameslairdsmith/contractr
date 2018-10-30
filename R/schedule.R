@@ -1,7 +1,3 @@
-#' @rdname schedule
-#' @aliases schedule schedule.contract
-#' @author James Laird-Smith
-#' @keywords event contract
 #' @export
 
 schedule <- function(object, ...)
@@ -9,7 +5,7 @@ schedule <- function(object, ...)
 
 #' Create the events of a contract
 #'
-#' For a contract with at least one term and no missing stipulations
+#' For a contract (with at least one term and no missing stipulations)
 #' create the financial events that ought result from it.
 #' @param contract A contract with at least one term.
 #' @return A tibble housing the contract's events.
