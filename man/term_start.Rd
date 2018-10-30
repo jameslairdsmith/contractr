@@ -5,7 +5,7 @@
 \title{Set the start details of a contract}
 \usage{
 term_start(contract, start_date, id = "start_date", payment = 0,
-  receipt = 0)
+  receipt = 0, consideration)
 }
 \arguments{
 \item{contract}{The contract for which the \code{start date} is to be specified.}

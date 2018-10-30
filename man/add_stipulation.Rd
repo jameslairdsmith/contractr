@@ -2,18 +2,23 @@
 % Please edit documentation in R/stipulation.R
 \name{add_stipulation}
 \alias{add_stipulation}
-\title{Overall wrapper for adding a new term to the current contract}
+\title{Add a stipulation to a contract}
 \usage{
-add_stipulation(contract, stipulation, stipulation_name)
+add_stipulation(contract, stipulation_value, stipulation_name)
 }
 \arguments{
-\item{contract}{A \code{\link[=contract]{contract()}}.}
+\item{contract}{The \code{contract} to which the stipulation is to be added.}
 
-\item{object}{A stipulation to add to the contract.}
+\item{stipulation_value}{The value of the stipulation.}
+
+\item{stipulation_name}{The name of the stipulation.}
 }
 \value{
-A updated \code{\link[=contract]{contract()}} with the new term in the last slot.
+A updated \code{contract} with the new stipulation in the last slot.
 }
 \description{
-\code{add_stipulation} adds a term to the last location in the contract.
+The function allows for the adding of a stipulation
+to the list of stipulations in a contract. This is most
+useful when used as a wrapper together with \code{add_term()}
+and \code{make_term()} for creating a custom term type.
 }
