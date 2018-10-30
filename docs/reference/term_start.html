@@ -216,11 +216,11 @@ Defaults to 0.</p></td>
 #&gt;   &lt;date&gt;     &lt;chr&gt;          &lt;dbl&gt;
 #&gt; 1 2000-01-01 start_date         0</div><div class='input'>
 <span class='fu'><a href='contract.html'>contract</a></span>() <span class='kw'>%&gt;%</span>
- <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/01/01"</span>), <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"Inception date"</span>) <span class='kw'>%&gt;%</span>
+ <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/01/01"</span>), <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"purchase date"</span>) <span class='kw'>%&gt;%</span>
  <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
-#&gt;   evt_date   evt_type       evt_value
-#&gt;   &lt;date&gt;     &lt;chr&gt;              &lt;dbl&gt;
-#&gt; 1 2000-01-01 Inception date         0</div><div class='input'>
+#&gt;   evt_date   evt_type      evt_value
+#&gt;   &lt;date&gt;     &lt;chr&gt;             &lt;dbl&gt;
+#&gt; 1 2000-01-01 purchase date         0</div><div class='input'>
 <span class='fu'><a href='contract.html'>contract</a></span>() <span class='kw'>%&gt;%</span>
  <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/02/01"</span>), <span class='kw'>receipt</span> <span class='kw'>=</span> <span class='fl'>1000</span>) <span class='kw'>%&gt;%</span>
  <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
