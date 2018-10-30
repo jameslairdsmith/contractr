@@ -1,4 +1,4 @@
-#' Make new term objects
+#' Make a new term object
 #'
 #' The function is an overall wrapper for creating objects
 #' with class of `term`. These are used as part of the
@@ -23,7 +23,7 @@ make_term <- function(subclass, ..., .prefix = "term_") {
 }
 
 
-#' Add a new term contract
+#' Add a new term to a contract
 #'
 #' `add_term` adds a term to the last location in the contract.
 #' The function is most useful as a wrapper for the creation of

@@ -2,7 +2,7 @@
 % Please edit documentation in R/term.R
 \name{make_term}
 \alias{make_term}
-\title{Make new term objects}
+\title{Make a new term object}
 \usage{
 make_term(subclass, ..., .prefix = "term_")
 }

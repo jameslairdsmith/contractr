@@ -2,7 +2,7 @@
 % Please edit documentation in R/term.R
 \name{add_term}
 \alias{add_term}
-\title{Add a new term contract}
+\title{Add a new term to a contract}
 \usage{
 add_term(contract, term)
 }
