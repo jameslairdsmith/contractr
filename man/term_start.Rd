@@ -16,10 +16,10 @@ term_start(contract, start_date, id = "start_date", payment = 0,
 (which is reccomended).}
 
 \item{payment}{The amount paid at the start of the contract.
-Defaults to zero.}
+Defaults to 0.}
 
 \item{receipt}{The amount recieved at the start of the contract.
-Defaults to zero.}
+Defaults to 0.}
 }
 \value{
 A contract object with the term added.
@@ -28,8 +28,8 @@ A contract object with the term added.
 This function can be used to specify the start date of a contract.
 }
 \details{
-If both `payment` and `receipt` are specified,
-only the netted amount will be captured in the event.
+Note that if both `receipt` and `payment` are specified, the net amount
+(`receipt` - `payment`) will be the amount shown in the event.
 }
 \examples{
 library(magrittr)
@@ -43,7 +43,11 @@ contract_a
 contract_a \%>\% schedule()
 
 contract() \%>\%
- term_start(as.Date("2000/02/01"), receipt = 100) \%>\%
+ term_start(as.Date("2000/01/01"), id = "Inception date") \%>\%
+ schedule()
+
+contract() \%>\%
+ term_start(as.Date("2000/02/01"), receipt = 1000) \%>\%
  schedule()
 
 contract() \%>\%
@@ -51,7 +55,7 @@ contract() \%>\%
  schedule()
 
 contract() \%>\%
- term_start(as.Date("2000/04/01"), payment = 50, receipt = 100) \%>\%
+ term_start(as.Date("2000/04/01"), payment = 50, receipt = 1000) \%>\%
  schedule()
 }
 \keyword{contract,}

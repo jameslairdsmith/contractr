@@ -1,21 +1,23 @@
-#' @title Set the start date of a contract
+#' Set the start date of a contract
 #'
-#' @description This function can be used to specify the start date of a contract.
+#' This function can be used to specify the start date of a contract.
+#'
+#' Note that if both `receipt` and `payment` are specified, the net amount
+#' (`receipt` - `payment`) will be the amount shown in the event.
+#'
 #' @param contract The contract for which the start date is to be specified.
 #' @param start_date The start date to be specified.
 #' @param id An optional name for the event. Defaults to "start_date"
 #' (which is reccomended).
 #' @param payment The amount paid at the start of the contract.
-#' Defaults to zero.
+#' Defaults to 0.
 #' @param receipt The amount recieved at the start of the contract.
-#' Defaults to zero.
+#' Defaults to 0.
 #' @keywords contract, start, date
 #' @importFrom magrittr %>%
 #' @importFrom tibble tibble
 #' @export
 #' @return A contract object with the term added.
-#' @details If both `payment` and `receipt` are specified,
-#' only the netted amount will be captured in the event.
 #' @examples
 #' library(magrittr)
 #'
@@ -28,7 +30,11 @@
 #' contract_a %>% schedule()
 #'
 #' contract() %>%
-#'  term_start(as.Date("2000/02/01"), receipt = 100) %>%
+#'  term_start(as.Date("2000/01/01"), id = "Inception date") %>%
+#'  schedule()
+#'
+#' contract() %>%
+#'  term_start(as.Date("2000/02/01"), receipt = 1000) %>%
 #'  schedule()
 #'
 #' contract() %>%
@@ -36,12 +42,11 @@
 #'  schedule()
 #'
 #' contract() %>%
-#'  term_start(as.Date("2000/04/01"), payment = 50, receipt = 100) %>%
+#'  term_start(as.Date("2000/04/01"), payment = 50, receipt = 1000) %>%
 #'  schedule()
 
 term_start <-
   function(contract, start_date, id = "start_date", payment = 0, receipt = 0){
-
     contract %>%
       add_term(
         term_start_new(
