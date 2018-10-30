@@ -1,15 +1,20 @@
-#' @title Overall wrapper to make new term objects
+#' Make new term objects
 #'
-#' @description The function creates objects with class of `term`
+#' The function is an overall wrapper for creating objects
+#' with class of `term`. These are used as part of the
+#' process of adding custom terms.
 #' @param subclass A character string for the resulting class. For example,
 #'   if `subclass = "blah"` the term object that is returned has class
-#'   `clause_blah`.
-#' @param ... All arguments to the operator that should be returned.
-#' @param .prefix Prefix to the subclass created.
+#'   `term_blah`. Subclasses should describe the kind of term that is
+#'   being created; for example, the term at the begining of the
+#'   contract is called `term_start`.
+#' @param ... All arguments to the term that should be returned.
+#' @param .prefix Prefix to the subclass created. Defaults to
+#'   `term_` which is reccomended.
 #' @importFrom magrittr %>%
 #' @importFrom purrr some keep
 #' @keywords contract term
-#' @return An updated term with the new class.
+#' @return An contractual term with the new class.
 #' @export
 
 make_term <- function(subclass, ..., .prefix = "term_") {
@@ -18,9 +23,11 @@ make_term <- function(subclass, ..., .prefix = "term_") {
 }
 
 
-#' Add a new term to the current contract
+#' Add a new term contract
 #'
-#' `add_term` adds a step to the last location in the recipe.
+#' `add_term` adds a term to the last location in the contract.
+#' The function is most useful as a wrapper for the creation of
+#' custom terms (in conjuction with `make_term()`.
 #'
 #' @param contract A [contract()].
 #' @param object A term object.
