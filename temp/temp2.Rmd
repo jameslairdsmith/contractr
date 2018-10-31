@@ -24,3 +24,17 @@ View(cont)
 
 ```
 
+
+```{r}
+is.list(contract())
+```
+
+
+```{r}
+contract_a <-
+  contract() %>%
+  term_start(dmy("01/01/2018")) 
+
+class(contract_a[["terms"]][[1]])
+```
+
