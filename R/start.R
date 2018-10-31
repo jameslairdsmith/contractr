@@ -78,7 +78,7 @@ schedule.term_start <- function(object, ...) {
 
   tibble::tibble(
     event_date = object$start_date,
-    event_type = object$id,
+    event_type = object$event_name,
     event_value = consideration
   )
 }
