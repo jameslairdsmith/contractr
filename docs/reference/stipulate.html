@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • contractr</title>
+<title>Add a stipulation to a contract — stipulate • contractr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,7 +30,13 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Add a stipulation to a contract — stipulate" />
+
+<meta property="og:description" content="The function allows for the adding of a stipulation
+to the list of stipulations in a contract. This is most
+useful when used as a wrapper together with add_term()
+and make_term() for creating a custom term type." />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -46,7 +52,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -141,84 +147,55 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Add a stipulation to a contract</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/stipulation.R'><code>R/stipulation.R</code></a></small>
+    <div class="hidden name"><code>stipulate.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p>The function allows for the adding of a stipulation
+to the list of stipulations in a contract. This is most
+useful when used as a wrapper together with <code><a href='add_term.html'>add_term()</a></code>
+and <code><a href='make_term.html'>make_term()</a></code> for creating a custom term type.</p>
+    
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
-
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-basic-functions" class="hasAnchor"><a href="#section-basic-functions" class="anchor"></a>Basic Functions</h2>
-          <p class="section-desc"><p>Functions that are basic.</p></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="contract.html">contract()</a></code> </p>
-        </td>
-        <td><p>Create a financial contract</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="schedule.html">schedule()</a></code> </p>
-        </td>
-        <td><p>Create the events of a contract</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-adding-terms" class="hasAnchor"><a href="#section-adding-terms" class="anchor"></a>Adding terms</h2>
-          <p class="section-desc"><p>Functions for adding terms</p></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="term_start.html">term_start()</a></code> </p>
-        </td>
-        <td><p>Set the start details of a contract</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-creating-custom-clauses" class="hasAnchor"><a href="#section-creating-custom-clauses" class="anchor"></a>Creating custom clauses</h2>
-          <p class="section-desc"><p>These fuctions can be used if you want to add new types of clauses or terms.</p></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="make_term.html">make_term()</a></code> </p>
-        </td>
-        <td><p>Make a new term object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="add_term.html">add_term()</a></code> </p>
-        </td>
-        <td><p>Add a new term to a contract</p></td>
-      </tr>
-    </tbody>
+    <pre class="usage"><span class='fu'>stipulate</span>(<span class='no'>contract</span>, <span class='no'>stipulation_value</span>, <span class='no'>stipulation_name</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>contract</th>
+      <td><p>The <code>contract</code> to which the stipulation is to be added.</p></td>
+    </tr>
+    <tr>
+      <th>stipulation_value</th>
+      <td><p>The value of the stipulation.</p></td>
+    </tr>
+    <tr>
+      <th>stipulation_name</th>
+      <td><p>The name of the stipulation.</p></td>
+    </tr>
     </table>
-  </div>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>A updated <code>contract</code> with the new stipulation in the last slot.</p>
+    
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-basic-functions">Basic Functions</a></li>
-      <li><a href="#section-adding-terms">Adding terms</a></li>
-      <li><a href="#section-creating-custom-clauses">Creating custom clauses</a></li>
-    </ul>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
+
   </div>
 </div>
 

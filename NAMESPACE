@@ -2,11 +2,11 @@
 
 S3method(schedule,contract)
 S3method(schedule,term_start)
-export(add_stipulation)
 export(add_term)
 export(contract)
 export(make_term)
 export(schedule)
+export(stipulate)
 export(term_start)
 importFrom(dplyr,bind_rows)
 importFrom(magrittr,"%>%")
