@@ -157,8 +157,8 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>term_start</span>(<span class='no'>contract</span>, <span class='no'>start_date</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"start_date"</span>, <span class='kw'>payment</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>receipt</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='no'>consideration</span>)</pre>
+    <pre class="usage"><span class='fu'>term_start</span>(<span class='no'>contract</span>, <span class='no'>start_date</span>, <span class='kw'>event_name</span> <span class='kw'>=</span> <span class='st'>"start_date"</span>,
+  <span class='kw'>payment</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>receipt</span> <span class='kw'>=</span> <span class='fl'>0</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -172,7 +172,7 @@
       <td><p>The start date to be specified.</p></td>
     </tr>
     <tr>
-      <th>id</th>
+      <th>event_name</th>
       <td><p>An optional name for the event. Defaults to "start_date"
 (which is reccomended).</p></td>
     </tr>
@@ -209,34 +209,19 @@ Defaults to 0.</p></td>
 #&gt; 
 #&gt; Terms:
 #&gt; Start date of 1 Jan 2000</div><div class='input'>
-<span class='no'>contract_a</span> <span class='kw'>%&gt;%</span> <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
-#&gt;   evt_date   evt_type   evt_value
-#&gt;   &lt;date&gt;     &lt;chr&gt;          &lt;dbl&gt;
-#&gt; 1 2000-01-01 start_date         0</div><div class='input'>
+<span class='no'>contract_a</span> <span class='kw'>%&gt;%</span> <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; <span class='error'>Error: Column `event_type` must be a 1d atomic vector or a list</span></div><div class='input'>
 <span class='fu'><a href='contract.html'>contract</a></span>() <span class='kw'>%&gt;%</span>
- <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/01/01"</span>), <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"purchase date"</span>) <span class='kw'>%&gt;%</span>
- <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
-#&gt;   evt_date   evt_type      evt_value
-#&gt;   &lt;date&gt;     &lt;chr&gt;             &lt;dbl&gt;
-#&gt; 1 2000-01-01 purchase date         0</div><div class='input'>
+ <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/01/01"</span>), <span class='kw'>event_name</span> <span class='kw'>=</span> <span class='st'>"purchase date"</span>) <span class='kw'>%&gt;%</span>
+ <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; <span class='error'>Error: Column `event_type` must be a 1d atomic vector or a list</span></div><div class='input'>
 <span class='fu'><a href='contract.html'>contract</a></span>() <span class='kw'>%&gt;%</span>
  <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/02/01"</span>), <span class='kw'>receipt</span> <span class='kw'>=</span> <span class='fl'>1000</span>) <span class='kw'>%&gt;%</span>
- <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
-#&gt;   evt_date   evt_type   evt_value
-#&gt;   &lt;date&gt;     &lt;chr&gt;          &lt;dbl&gt;
-#&gt; 1 2000-02-01 start_date      1000</div><div class='input'>
+ <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; <span class='error'>Error: Column `event_type` must be a 1d atomic vector or a list</span></div><div class='input'>
 <span class='fu'><a href='contract.html'>contract</a></span>() <span class='kw'>%&gt;%</span>
  <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/03/01"</span>), <span class='kw'>payment</span> <span class='kw'>=</span> <span class='fl'>50</span>) <span class='kw'>%&gt;%</span>
- <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
-#&gt;   evt_date   evt_type   evt_value
-#&gt;   &lt;date&gt;     &lt;chr&gt;          &lt;dbl&gt;
-#&gt; 1 2000-03-01 start_date       -50</div><div class='input'>
+ <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; <span class='error'>Error: Column `event_type` must be a 1d atomic vector or a list</span></div><div class='input'>
 <span class='fu'><a href='contract.html'>contract</a></span>() <span class='kw'>%&gt;%</span>
  <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/04/01"</span>), <span class='kw'>payment</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>receipt</span> <span class='kw'>=</span> <span class='fl'>1000</span>) <span class='kw'>%&gt;%</span>
- <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
-#&gt;   evt_date   evt_type   evt_value
-#&gt;   &lt;date&gt;     &lt;chr&gt;          &lt;dbl&gt;
-#&gt; 1 2000-04-01 start_date       950</div></pre>
+ <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; <span class='error'>Error: Column `event_type` must be a 1d atomic vector or a list</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

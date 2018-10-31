@@ -7,7 +7,7 @@
 #'
 #' @param contract The contract for which the `start date` is to be specified.
 #' @param start_date The start date to be specified.
-#' @param id An optional name for the event. Defaults to "start_date"
+#' @param event_name An optional name for the event. Defaults to "start_date"
 #' (which is reccomended).
 #' @param payment The amount paid at the start of the contract.
 #' Defaults to 0.
@@ -31,7 +31,7 @@
 #' contract_a %>% schedule()
 #'
 #' contract() %>%
-#'  term_start(as.Date("2000/01/01"), id = "purchase date") %>%
+#'  term_start(as.Date("2000/01/01"), event_name = "purchase date") %>%
 #'  schedule()
 #'
 #' contract() %>%
@@ -47,12 +47,12 @@
 #'  schedule()
 
 term_start <-
-  function(contract, start_date, id = "start_date", payment = 0, receipt = 0){
+  function(contract, start_date, event_name = "start_date", payment = 0, receipt = 0){
     contract %>%
       add_term(
         term_start_new(
           start_date = start_date,
-          id = id,
+          event_name = event_name,
           payment = payment,
           receipt = receipt
           )
@@ -60,11 +60,11 @@ term_start <-
       stipulate(start_date, "start_date")
 }
 
-term_start_new <- function(start_date, id, payment, receipt, consideration){
+term_start_new <- function(start_date, event_name, payment, receipt){
     make_term(
       subclass = "start",
       start_date = start_date,
-      id = id,
+      event_name = event_name,
       payment = payment,
       receipt = receipt,
       unique = T
@@ -77,9 +77,9 @@ schedule.term_start <- function(object, ...) {
   consideration <- object$receipt - object$payment
 
   tibble::tibble(
-    evt_date = object$start_date,
-    evt_type = object$id,
-    evt_value = consideration
+    event_date = object$start_date,
+    event_type = object$id,
+    event_value = consideration
   )
 }
 

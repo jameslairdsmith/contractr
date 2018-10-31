@@ -4,15 +4,15 @@
 \alias{term_start}
 \title{Set the start details of a contract}
 \usage{
-term_start(contract, start_date, id = "start_date", payment = 0,
-  receipt = 0, consideration)
+term_start(contract, start_date, event_name = "start_date",
+  payment = 0, receipt = 0)
 }
 \arguments{
 \item{contract}{The contract for which the \code{start date} is to be specified.}
 
 \item{start_date}{The start date to be specified.}
 
-\item{id}{An optional name for the event. Defaults to "start_date"
+\item{event_name}{An optional name for the event. Defaults to "start_date"
 (which is reccomended).}
 
 \item{payment}{The amount paid at the start of the contract.
@@ -43,7 +43,7 @@ contract_a
 contract_a \%>\% schedule()
 
 contract() \%>\%
- term_start(as.Date("2000/01/01"), id = "purchase date") \%>\%
+ term_start(as.Date("2000/01/01"), event_name = "purchase date") \%>\%
  schedule()
 
 contract() \%>\%

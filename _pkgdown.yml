@@ -47,5 +47,5 @@ reference:
     contents:
       - make_term
       - add_term
-      - add_stipulation
+      - stipulate
 
