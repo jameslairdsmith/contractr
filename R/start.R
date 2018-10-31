@@ -48,7 +48,13 @@
 
 term_start <-
   function(contract, start_date, event_name = "start_date", payment = 0, receipt = 0){
-    contract %>%
+
+    if(payment != 0 & receipt != 0){
+      stop("Contract cannot have both payment and reciept.", call. = F)
+    }
+
+    output <-
+      contract %>%
       add_term(
         term_start_new(
           start_date = start_date,
@@ -58,6 +64,18 @@ term_start <-
           )
         ) %>%
       stipulate(start_date, "start_date")
+
+    if(payment != 0){
+      output %<>%
+        stipulate(payment, "initial_payment")
+    }
+
+    if(receipt != 0){
+      output %<>%
+        stipulate(receipt, "initial_receipt")
+    }
+
+    output
 }
 
 term_start_new <- function(start_date, event_name, payment, receipt){
@@ -84,7 +102,18 @@ schedule.term_start <- function(object, ...) {
 }
 
 print.term_start <- function(x, width = max(20, options()$width - 29), ...) {
-  cat("Start date of", sep = "")
+  cat("- Start date of", sep = "")
   cat(format(x$start_date, "%e %b %Y"), sep = "")
+
+  if(x$payment != 0){
+    cat(" with payment of ")
+    cat(x$payment)
+  }
+
+  if(x$receipt != 0){
+    cat(" with receipt of ")
+    cat(x$receipt)
+  }
+
   invisible(x)
 }
