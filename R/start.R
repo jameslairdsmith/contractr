@@ -2,8 +2,8 @@
 #'
 #' This function can be used to specify the start date of a contract.
 #'
-#' Note that if both `receipt` and `payment` are specified, the net amount
-#' (`receipt` - `payment`) will be the amount shown in the event.
+#' Note that `receipt` and `payment` cannot both be specified. If they are
+#' an error will be thrown.
 #'
 #' @param contract The contract for which the `start date` is to be specified.
 #' @param start_date The start date to be specified.
@@ -41,16 +41,12 @@
 #' contract() %>%
 #'  term_start(as.Date("2000/03/01"), payment = 50) %>%
 #'  schedule()
-#'
-#' contract() %>%
-#'  term_start(as.Date("2000/04/01"), payment = 50, receipt = 1000) %>%
-#'  schedule()
 
 term_start <-
   function(contract, start_date, event_name = "start_date", payment = 0, receipt = 0){
 
     if(payment != 0 & receipt != 0){
-      stop("Contract cannot have both payment and reciept.", call. = F)
+      stop("Start date cannot have both payment and reciept.", call. = F)
     }
 
     output <-
