@@ -194,8 +194,8 @@ Defaults to 0.</p></td>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Note that if both <code>receipt</code> and <code>payment</code> are specified, the net amount
-(<code>receipt</code> - <code>payment</code>) will be the amount shown in the event.</p>
+    <p>Note that <code>receipt</code> and <code>payment</code> cannot both be specified. If they are
+an error will be thrown.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -230,10 +230,7 @@ Defaults to 0.</p></td>
  <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
 #&gt;   event_date event_type event_value
 #&gt;   &lt;date&gt;     &lt;chr&gt;            &lt;dbl&gt;
-#&gt; 1 2000-03-01 start_date         -50</div><div class='input'>
-<span class='fu'><a href='contract.html'>contract</a></span>() <span class='kw'>%&gt;%</span>
- <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/04/01"</span>), <span class='kw'>payment</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>receipt</span> <span class='kw'>=</span> <span class='fl'>1000</span>) <span class='kw'>%&gt;%</span>
- <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; <span class='error'>Error: Contract cannot have both payment and reciept.</span></div></pre>
+#&gt; 1 2000-03-01 start_date         -50</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

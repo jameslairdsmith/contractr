@@ -28,8 +28,8 @@ A contract object with the term added.
 This function can be used to specify the start date of a contract.
 }
 \details{
-Note that if both \code{receipt} and \code{payment} are specified, the net amount
-(\code{receipt} - \code{payment}) will be the amount shown in the event.
+Note that \code{receipt} and \code{payment} cannot both be specified. If they are
+an error will be thrown.
 }
 \examples{
 library(magrittr)
@@ -52,10 +52,6 @@ contract() \%>\%
 
 contract() \%>\%
  term_start(as.Date("2000/03/01"), payment = 50) \%>\%
- schedule()
-
-contract() \%>\%
- term_start(as.Date("2000/04/01"), payment = 50, receipt = 1000) \%>\%
  schedule()
 }
 \keyword{contract,}
