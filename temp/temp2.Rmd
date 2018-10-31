@@ -38,3 +38,41 @@ contract_a <-
 class(contract_a[["terms"]][[1]])
 ```
 
+```{r}
+events <- 
+    contract() %>%
+    term_start(dmy("01/01/2018"), event_name = "purchase date") %>%
+    schedule()
+
+val <- events[1, "event_type"] %>% dplyr::pull()
+
+val == "purchase date"
+```
+```{r}
+events <-
+    contract() %>%
+    term_start(dmy("01/01/2018"), receipt = 100) #%>%
+    #schedule()
+
+  #expect_equal(events[1, "event_type"] %>% dplyr::pull(),"purchase date")
+as.numeric(events$stipulations[[2]])
+```
+
+```{r}
+contract_a <-
+  contract() %>%
+  term_start(as.Date("2000/02/01"), receipt = 1000) #%>% 
+  #schedule()
+
+as.numeric(contract_a$stipulations[[2]]) == 1000
+```
+
+```{r}
+contract_a <- 
+  contract() %>% 
+  term_start(dmy("01/01/2018"), receipt = 1000) #%>% 
+  #schedule()
+
+contract_a
+```
+
