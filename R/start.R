@@ -47,15 +47,14 @@
 #'  schedule()
 
 term_start <-
-  function(contract, start_date, id = "start_date", payment = 0, receipt = 0, consideration){
+  function(contract, start_date, id = "start_date", payment = 0, receipt = 0){
     contract %>%
       add_term(
         term_start_new(
           start_date = start_date,
           id = id,
           payment = payment,
-          receipt = receipt,
-          consideration = rlang::enexpr(consideration)
+          receipt = receipt
           )
         ) %>%
       stipulate(start_date, "start_date")
@@ -68,7 +67,6 @@ term_start_new <- function(start_date, id, payment, receipt, consideration){
       id = id,
       payment = payment,
       receipt = receipt,
-      consideration = consideration,
       unique = T
     )
 }
