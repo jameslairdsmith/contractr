@@ -58,7 +58,7 @@ term_start <-
           consideration = rlang::enexpr(consideration)
           )
         ) %>%
-      add_stipulation(start_date, "start_date")
+      stipulate(start_date, "start_date")
 }
 
 term_start_new <- function(start_date, id, payment, receipt, consideration){

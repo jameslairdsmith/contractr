@@ -11,7 +11,7 @@
 #' @return A updated `contract` with the new stipulation in the last slot.
 #' @export
 
-add_stipulation <- function(contract, stipulation_value, stipulation_name) {
+stipulate <- function(contract, stipulation_value, stipulation_name) {
   names(stipulation_value) <- stipulation_name
   contract$stipulations[[length(contract$stipulations) + 1]] <- stipulation_value
   contract
