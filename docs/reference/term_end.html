@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Set the start details of a contract — term_start • contractr</title>
+<title>Set the end details of a contract — term_end • contractr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Set the start details of a contract — term_start" />
+<meta property="og:title" content="Set the end details of a contract — term_end" />
 
-<meta property="og:description" content="This function can be used to specify the start date of a contract." />
+<meta property="og:description" content="This function can be used to specify the end date of a contract." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -146,44 +146,44 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Set the start details of a contract</h1>
-    <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/start.R'><code>R/start.R</code></a></small>
-    <div class="hidden name"><code>term_start.Rd</code></div>
+    <h1>Set the end details of a contract</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/end.R'><code>R/end.R</code></a></small>
+    <div class="hidden name"><code>term_end.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>This function can be used to specify the start date of a contract.</p>
+    <p>This function can be used to specify the end date of a contract.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>term_start</span>(<span class='no'>contract</span>, <span class='no'>start_date</span>, <span class='kw'>event_name</span> <span class='kw'>=</span> <span class='st'>"start_date"</span>,
-  <span class='kw'>payment</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>receipt</span> <span class='kw'>=</span> <span class='fl'>0</span>)</pre>
+    <pre class="usage"><span class='fu'>term_end</span>(<span class='no'>contract</span>, <span class='no'>end_date</span>, <span class='kw'>event_name</span> <span class='kw'>=</span> <span class='st'>"end_date"</span>, <span class='kw'>payment</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>receipt</span> <span class='kw'>=</span> <span class='fl'>0</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>contract</th>
-      <td><p>The contract for which the <code>start date</code> is to be specified.</p></td>
+      <td><p>The contract for which the <code>end date</code> is to be specified.</p></td>
     </tr>
     <tr>
-      <th>start_date</th>
-      <td><p>The start date to be specified.</p></td>
+      <th>end_date</th>
+      <td><p>The end date to be specified.</p></td>
     </tr>
     <tr>
       <th>event_name</th>
-      <td><p>An optional name for the event. Defaults to "start_date"
+      <td><p>An optional name for the event. Defaults to "end_date"
 (which is reccomended).</p></td>
     </tr>
     <tr>
       <th>payment</th>
-      <td><p>The amount paid at the start of the contract.
+      <td><p>The amount paid at the end of the contract.
 Defaults to 0.</p></td>
     </tr>
     <tr>
       <th>receipt</th>
-      <td><p>The amount recieved at the start of the contract.
+      <td><p>The amount recieved at the end of the contract.
 Defaults to 0.</p></td>
     </tr>
     </table>
@@ -203,34 +203,34 @@ an error will be thrown.</p>
 
 <span class='no'>contract_a</span> <span class='kw'>&lt;-</span>
   <span class='fu'><a href='contract.html'>contract</a></span>() <span class='kw'>%&gt;%</span>
-  <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/01/01"</span>))
+  <span class='fu'>term_end</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/01/01"</span>))
 
 <span class='no'>contract_a</span></div><div class='output co'>#&gt; A Financial Contract
 #&gt; 
 #&gt; Terms:
-#&gt; - Start date of  1 Jan 2000</div><div class='input'>
+#&gt; - End date of  1 Jan 2000</div><div class='input'>
 <span class='no'>contract_a</span> <span class='kw'>%&gt;%</span> <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
 #&gt;   event_date event_type event_value
 #&gt;   &lt;date&gt;     &lt;chr&gt;            &lt;dbl&gt;
-#&gt; 1 2000-01-01 start_date           0</div><div class='input'>
+#&gt; 1 2000-01-01 end_date             0</div><div class='input'>
 <span class='fu'><a href='contract.html'>contract</a></span>() <span class='kw'>%&gt;%</span>
- <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/01/01"</span>), <span class='kw'>event_name</span> <span class='kw'>=</span> <span class='st'>"purchase date"</span>) <span class='kw'>%&gt;%</span>
- <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
-#&gt;   event_date event_type    event_value
-#&gt;   &lt;date&gt;     &lt;chr&gt;               &lt;dbl&gt;
-#&gt; 1 2000-01-01 purchase date           0</div><div class='input'>
-<span class='fu'><a href='contract.html'>contract</a></span>() <span class='kw'>%&gt;%</span>
- <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/02/01"</span>), <span class='kw'>receipt</span> <span class='kw'>=</span> <span class='fl'>1000</span>) <span class='kw'>%&gt;%</span>
+ <span class='fu'>term_end</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/01/01"</span>), <span class='kw'>event_name</span> <span class='kw'>=</span> <span class='st'>"sale date"</span>) <span class='kw'>%&gt;%</span>
  <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
 #&gt;   event_date event_type event_value
 #&gt;   &lt;date&gt;     &lt;chr&gt;            &lt;dbl&gt;
-#&gt; 1 2000-02-01 start_date        1000</div><div class='input'>
+#&gt; 1 2000-01-01 sale date            0</div><div class='input'>
 <span class='fu'><a href='contract.html'>contract</a></span>() <span class='kw'>%&gt;%</span>
- <span class='fu'>term_start</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/03/01"</span>), <span class='kw'>payment</span> <span class='kw'>=</span> <span class='fl'>50</span>) <span class='kw'>%&gt;%</span>
+ <span class='fu'>term_end</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/02/01"</span>), <span class='kw'>receipt</span> <span class='kw'>=</span> <span class='fl'>1000</span>) <span class='kw'>%&gt;%</span>
  <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
 #&gt;   event_date event_type event_value
 #&gt;   &lt;date&gt;     &lt;chr&gt;            &lt;dbl&gt;
-#&gt; 1 2000-03-01 start_date         -50</div></pre>
+#&gt; 1 2000-02-01 end_date          1000</div><div class='input'>
+<span class='fu'><a href='contract.html'>contract</a></span>() <span class='kw'>%&gt;%</span>
+ <span class='fu'>term_end</span>(<span class='fu'>as.Date</span>(<span class='st'>"2000/03/01"</span>), <span class='kw'>payment</span> <span class='kw'>=</span> <span class='fl'>50</span>) <span class='kw'>%&gt;%</span>
+ <span class='fu'><a href='schedule.html'>schedule</a></span>()</div><div class='output co'>#&gt; # A tibble: 1 x 3
+#&gt;   event_date event_type event_value
+#&gt;   &lt;date&gt;     &lt;chr&gt;            &lt;dbl&gt;
+#&gt; 1 2000-03-01 end_date           -50</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
