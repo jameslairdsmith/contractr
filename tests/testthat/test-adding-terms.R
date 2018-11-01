@@ -49,9 +49,9 @@ test_that("only one of either payment or reciept can be specified for a start te
   expect_error(
     contract() %>%
       term_start(
-        as.Date("2000/02/01"),
-        payment = 50,
-        receipt = 10)
+                  as.Date("2000/02/01"),
+                  payment = 50,
+                  receipt = 10)
     )
 
 })
