@@ -12,7 +12,7 @@ schedule <- function(object, ...)
 #' @return A tibble housing the contract's events.
 #' @rdname schedule
 #' @importFrom tibble tibble
-#' @importFrom dplyr bind_rows
+#' @importFrom dplyr bind_rows arrange
 #' @export
 
 schedule.contract <- function(contract) {
@@ -23,5 +23,6 @@ for (i in seq(along = contract$terms)){
   new_events <- schedule(contract$terms[[i]])
   events <- dplyr::bind_rows(new_events, events)
 }
-events
+events %>%
+  dplyr::arrange(event_date)
 }

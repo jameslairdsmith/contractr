@@ -33,3 +33,16 @@ test_that("unique clauses can only be added to a contract once", {
       term_start(dmy("01/01/2018"))
   )
 })
+
+test_that("scheduled events are sorted", {
+  a_contract <-
+    contract() %>%
+    term_end(dmy("31/12/2000"), receipt = 1000) %>%
+    term_start(dmy("01/01/2000"), payment = 1000)
+
+  events <- a_contract %>% schedule()
+
+  expect_equal(events[2,2] %>% dplyr::pull(), "end_date")
+  expect_equal(events[1,2] %>% dplyr::pull(), "start_date")
+
+})
