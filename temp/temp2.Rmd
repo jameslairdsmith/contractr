@@ -80,9 +80,11 @@ contract_a
 ```{r}
 a_contract <-
   contract() %>% 
-  term_start(dmy("01/01/2000"), payment = 1000) %>% 
-  term_end(dmy("31/12/2000"), receipt = 1000)
+  term_end(dmy("31/12/2000"), receipt = 1000) %>% 
+  term_start(dmy("01/01/2000"), payment = 1000)
+  
 
-View(a_contract)
+a_contract %>% 
+  schedule()
 ```
 

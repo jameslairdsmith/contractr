@@ -1,4 +1,4 @@
-context("test-adding-terms")
+context("test-term-start")
 
 library(lubridate)
 library(magrittr)

@@ -1,5 +1,8 @@
 context("test-basic-functions")
 
+library(lubridate)
+library(magrittr)
+
 test_that("contracts can be created", {
   expect_true(is.list(contract()))
   expect_is(contract(), "contract")
@@ -23,6 +26,7 @@ test_that("unique clauses can only be added to a contract once", {
     term_start(dmy("01/01/2018"))
 
   expect_true(contract_a[["terms"]][[1]][["unique"]])
+
   expect_error(
     contract() %>%
       term_start(dmy("01/01/2018")) %>%
