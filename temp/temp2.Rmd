@@ -80,11 +80,26 @@ contract_a
 ```{r}
 a_contract <-
   contract() %>% 
-  term_end(dmy("31/12/2000"), receipt = 1000) %>% 
-  term_start(dmy("01/01/2000"), payment = 1000)
+  term_start(dmy("01/01/2000"), payment =  1000, event_name = "purchase date") %>% 
+  term_end(dmy("31/12/2000"), receipt =  1000, event_name = "sale date") 
+  
   
 
-a_contract %>% 
+events <-
+  a_contract %>% 
   schedule()
+
+#events[1,2] %>% dplyr::pull()
+
+events
+```
+
+
+```{r}
+make_date_seq(dmy("31/01/2000"), dmy("31/12/2000"), months(1))
+```
+
+```{r}
+seq.Date(from = dmy("01/01/2000"), to = dmy("15/02/2000"), by = "month")
 ```
 
