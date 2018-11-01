@@ -98,7 +98,7 @@ schedule.term_start <- function(object, ...) {
 }
 
 print.term_start <- function(x, width = max(20, options()$width - 29), ...) {
-  cat("- Start date of", sep = "")
+  cat("- Start date of ", sep = "")
   cat(format(x$start_date, "%e %b %Y"), sep = "")
 
   if(x$payment != 0){
