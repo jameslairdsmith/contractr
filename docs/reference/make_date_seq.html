@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create a series of dates — make_date_seq • contractr</title>
+<title>Create a sequence of dates — make_date_seq • contractr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,11 @@
 
 
 
-<meta property="og:title" content="Create a series of dates — make_date_seq" />
+<meta property="og:title" content="Create a sequence of dates — make_date_seq" />
 
-<meta property="og:description" content="This function creates a series of dates evenly spread apart. Currently a thin wrapper around `by()`" />
+<meta property="og:description" content="It is often the case that one needs to create
+a series of dates using only the start, end and
+freqency." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -71,6 +73,7 @@
   <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
+     Home
   </a>
 </li>
 <li>
@@ -84,7 +87,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/creating_custom_clauses.html">Creating Custom Clauses</a>
+      <a href="../articles/creating_custom_terms.html">Creating Custom Terms</a>
     </li>
     <li>
       <a href="../articles/faq.html">FAQ</a>
@@ -93,40 +96,31 @@
       <a href="../articles/internals.html">Internals of contracr</a>
     </li>
     <li>
-      <a href="../articles/multi-currency.html">Multiple Currencies in Contractr</a>
-    </li>
-    <li>
       <a href="../articles/nomenclature.html">Nomenclature in contractr</a>
     </li>
   </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Other
+    Vignettes
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li class="dropdown-header">Category A</li>
+    <li class="dropdown-header">Other</li>
     <li>
-      <a href="../articles/creating_custom_clauses.html">A different title</a>
+      <a href="../articles/nomenclature.html">Nomenclature</a>
     </li>
     <li>
-      <a href="../articles/creating_custom_clauses.html">A second different title</a>
-    </li>
-    <li>
-      <a href="../articles/creating_custom_clauses.html">A third different title</a>
+      <a href="../articles/faq.html">FAQ</a>
     </li>
     <li class="divider"></li>
-    <li class="dropdown-header">Category B</li>
+    <li class="dropdown-header">Contributing</li>
     <li>
-      <a href="../articles/creating_custom_clauses.html">A forth different title</a>
+      <a href="../articles/creating_custom_terms.html">Creating custom terms</a>
     </li>
     <li>
-      <a href="../articles/creating_custom_clauses.html">A fifth different title</a>
-    </li>
-    <li>
-      <a href="../articles/creating_custom_clauses.html">A sixth different title</a>
+      <a href="../articles/internals.html">Internals</a>
     </li>
   </ul>
 </li>
@@ -154,47 +148,62 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create a series of dates</h1>
+    <h1>Create a sequence of dates</h1>
     <small class="dont-index">Source: <a href='https://github.com/jameslairdsmith/contractr/blob/master/R/make_date_seq.R'><code>R/make_date_seq.R</code></a></small>
     <div class="hidden name"><code>make_date_seq.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>This function creates a series of dates evenly spread apart. Currently a thin wrapper around `by()`</p>
+    <p>It is often the case that one needs to create
+a series of dates using only the start, end and
+freqency.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>make_date_seq</span>(<span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>make_date_seq</span>(<span class='no'>start_date</span>, <span class='no'>end_date</span>, <span class='no'>period_gap</span>, <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='fl'>0.2</span>,
+  <span class='kw'>include_first</span> <span class='kw'>=</span> <span class='no'>F</span>, <span class='kw'>include_last</span> <span class='kw'>=</span> <span class='no'>T</span>, <span class='kw'>replace_last</span> <span class='kw'>=</span> <span class='no'>T</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>from</th>
-      <td><p>A date to start from.</p></td>
+      <th>start_date</th>
+      <td><p>The start date</p></td>
     </tr>
     <tr>
-      <th>to</th>
-      <td><p>A date to go to.</p></td>
+      <th>end_date</th>
+      <td><p>The end date</p></td>
     </tr>
     <tr>
-      <th>by</th>
-      <td><p>spacing between dates.</p></td>
+      <th>period_gap</th>
+      <td><p>The period gap</p></td>
+    </tr>
+    <tr>
+      <th>tolerance</th>
+      <td><p>the tolerance</p></td>
+    </tr>
+    <tr>
+      <th>include_first</th>
+      <td><p>whether to include the first date</p></td>
+    </tr>
+    <tr>
+      <th>include_last</th>
+      <td><p>whether to include the last date</p></td>
+    </tr>
+    <tr>
+      <th>replace_last</th>
+      <td><p>whether to replace the last date with <code>end_date</code></p></td>
     </tr>
     </table>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>make_date_seq</span>(<span class='kw'>from</span><span class='kw'>=</span><span class='fl'>1</span>,<span class='kw'>to</span><span class='kw'>=</span><span class='fl'>5</span>, <span class='kw'>by</span><span class='kw'>=</span><span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] 1 2 3 4 5</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+                </ul>
 
   </div>
 </div>

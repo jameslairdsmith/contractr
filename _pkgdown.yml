@@ -42,6 +42,9 @@ reference:
     desc: "Functions for adding terms"
     contents:
       - starts_with("term")
+  - title: "Helper functions"
+    contents:
+      - make_date_seq
   - title: "Creating custom clauses"
     desc: "These fuctions can be used if you want to add new types of clauses or terms."
     contents:
