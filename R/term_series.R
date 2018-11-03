@@ -61,7 +61,7 @@ schedule.term_series <- function(object, ...) {
   }
 
   if(has_element_named(object, "include_last")){
-    make_partial_date_seq <- purrr::partial(make_partial_date_seq, include_last = object$include_last, .lazy = F)
+    make_partial_date_seq <- purrr::partial(make_date_seq, include_last = object$include_last, .lazy = F)
   }
 
   dates <- make_partial_date_seq(object$from,
