@@ -103,3 +103,31 @@ make_date_seq(dmy("31/01/2000"), dmy("31/12/2000"), months(1))
 seq.Date(from = dmy("01/01/2000"), to = dmy("15/02/2000"), by = "month")
 ```
 
+```{r}
+make_date_seq(
+  dmy("31/01/2000"),
+  dmy("31/12/2000"), 
+  "qUarterly",
+  tolerance = 0.8,
+  include_first = T,
+  include_last = T,
+  replace_last = F,
+  allow_last_jump = T)
+```
+
+```{r}
+contract_a <- 
+  contract() %>% 
+  term_start(dmy("01/01/2000"), payment = 1000) %>% 
+  term_end(dmy("01/12/2000"), receipt = 1000) %>% 
+  term_series(freq = months(1), 
+              from = dmy("01/01/2000"), 
+              to = dmy("01/12/2000"), 
+              amount = 100,
+              include_first = F,
+              include_last = F) 
+
+#View(contract_a)
+contract_a %>% schedule()
+```
+

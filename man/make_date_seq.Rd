@@ -5,7 +5,8 @@
 \title{Create a sequence of dates}
 \usage{
 make_date_seq(start_date, end_date, period_gap, tolerance = 0.2,
-  include_first = F, include_last = T, replace_last = T)
+  include_first = T, include_last = T, replace_last = F,
+  allow_last_jump = F)
 }
 \arguments{
 \item{start_date}{The start date}
